@@ -1,0 +1,1 @@
+{"network":"MTN","request-id":"DATA_669439caa6800","amount":"514","dataplan":"2GB","status":"process","message":"Transaction on process MTN SME 2GB to 08037521142","phone_number":"08037521142","oldbal":"45540.375","newbal":45026.375,"system":"API","wallet_vending":"wallet","plan_type":"SME"}

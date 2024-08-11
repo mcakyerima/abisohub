@@ -1,0 +1,1443 @@
+[15-Jun-2024 10:25:42 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[15-Jun-2024 10:30:06 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[15-Jun-2024 10:30:49 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[15-Jun-2024 10:32:41 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[15-Jun-2024 10:32:47 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[16-Jun-2024 13:08:27 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[16-Jun-2024 13:08:48 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[16-Jun-2024 13:09:24 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[16-Jun-2024 13:10:04 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[16-Jun-2024 13:10:07 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[16-Jun-2024 13:10:09 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[16-Jun-2024 13:10:10 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[16-Jun-2024 13:10:12 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[16-Jun-2024 13:10:59 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[16-Jun-2024 13:11:04 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[16-Jun-2024 13:16:02 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000]: General error: 2013 Lost connection to server during query in /home/abiskglr/public_html/core/Models/SubscriberModel.php:623
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/SubscriberModel.php(623): PDOStatement->execute()
+#1 /home/abiskglr/public_html/core/Controllers/Subscriber.php(557): SubscriberModel->getSiteSettings()
+#2 /home/abiskglr/public_html/mobile/home/includes/route.php(67): Subscriber->getSiteSettings()
+#3 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#4 {main}
+  thrown in /home/abiskglr/public_html/core/Models/SubscriberModel.php on line 623
+[16-Jun-2024 13:16:02 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000]: General error: 2013 Lost connection to server during query in /home/abiskglr/public_html/core/Models/SubscriberModel.php:623
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/SubscriberModel.php(623): PDOStatement->execute()
+#1 /home/abiskglr/public_html/core/Controllers/Subscriber.php(557): SubscriberModel->getSiteSettings()
+#2 /home/abiskglr/public_html/mobile/home/includes/route.php(67): Subscriber->getSiteSettings()
+#3 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#4 {main}
+  thrown in /home/abiskglr/public_html/core/Models/SubscriberModel.php on line 623
+[16-Jun-2024 22:16:46 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(47): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[16-Jun-2024 22:17:01 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(47): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[16-Jun-2024 22:17:39 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[16-Jun-2024 22:17:44 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[16-Jun-2024 22:17:44 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(47): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[16-Jun-2024 22:17:45 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[16-Jun-2024 22:17:48 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[16-Jun-2024 22:17:53 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[16-Jun-2024 22:18:05 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[16-Jun-2024 22:19:09 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[16-Jun-2024 22:22:00 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[17-Jun-2024 23:18:39 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[17-Jun-2024 23:18:48 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[17-Jun-2024 23:18:50 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[17-Jun-2024 23:18:51 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[17-Jun-2024 23:20:22 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[17-Jun-2024 23:20:24 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[17-Jun-2024 23:20:25 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[17-Jun-2024 23:20:26 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[17-Jun-2024 23:20:27 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[17-Jun-2024 23:20:29 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[17-Jun-2024 23:20:31 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[17-Jun-2024 23:20:34 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[21-Jun-2024 21:46:42 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[21-Jun-2024 21:46:45 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[21-Jun-2024 21:46:53 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[21-Jun-2024 21:47:04 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[21-Jun-2024 21:47:05 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[21-Jun-2024 21:47:07 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[21-Jun-2024 21:47:09 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[21-Jun-2024 21:47:10 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[21-Jun-2024 21:47:13 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[21-Jun-2024 21:47:14 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[21-Jun-2024 21:47:16 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[21-Jun-2024 21:47:23 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[21-Jun-2024 21:47:25 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[21-Jun-2024 21:49:05 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[21-Jun-2024 21:49:07 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[21-Jun-2024 21:49:39 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[21-Jun-2024 21:50:09 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[21-Jun-2024 21:50:13 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[21-Jun-2024 21:50:14 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[21-Jun-2024 21:50:16 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[21-Jun-2024 21:50:18 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[21-Jun-2024 21:50:40 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[21-Jun-2024 21:50:55 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[21-Jun-2024 21:53:28 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[21-Jun-2024 21:53:30 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[21-Jun-2024 21:53:53 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[21-Jun-2024 21:53:58 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[21-Jun-2024 21:54:01 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[21-Jun-2024 21:54:27 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[21-Jun-2024 21:54:32 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[21-Jun-2024 21:54:35 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[21-Jun-2024 21:54:37 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[21-Jun-2024 21:54:51 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000]: General error: 2013 Lost connection to server during query in /home/abiskglr/public_html/core/Models/SubscriberModel.php:623
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/SubscriberModel.php(623): PDOStatement->execute()
+#1 /home/abiskglr/public_html/core/Controllers/Subscriber.php(557): SubscriberModel->getSiteSettings()
+#2 /home/abiskglr/public_html/mobile/home/includes/route.php(67): Subscriber->getSiteSettings()
+#3 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#4 {main}
+  thrown in /home/abiskglr/public_html/core/Models/SubscriberModel.php on line 623
+[21-Jun-2024 21:54:51 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000]: General error: 2013 Lost connection to server during query in /home/abiskglr/public_html/core/Models/SubscriberModel.php:623
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/SubscriberModel.php(623): PDOStatement->execute()
+#1 /home/abiskglr/public_html/core/Controllers/Subscriber.php(557): SubscriberModel->getSiteSettings()
+#2 /home/abiskglr/public_html/mobile/home/includes/route.php(67): Subscriber->getSiteSettings()
+#3 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#4 {main}
+  thrown in /home/abiskglr/public_html/core/Models/SubscriberModel.php on line 623
+[21-Jun-2024 21:54:53 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000]: General error: 2013 Lost connection to server during query in /home/abiskglr/public_html/core/Models/SubscriberModel.php:623
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/SubscriberModel.php(623): PDOStatement->execute()
+#1 /home/abiskglr/public_html/core/Controllers/Subscriber.php(557): SubscriberModel->getSiteSettings()
+#2 /home/abiskglr/public_html/mobile/home/includes/route.php(67): Subscriber->getSiteSettings()
+#3 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#4 {main}
+  thrown in /home/abiskglr/public_html/core/Models/SubscriberModel.php on line 623
+[21-Jun-2024 21:54:59 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000]: General error: 2013 Lost connection to server during query in /home/abiskglr/public_html/core/Models/SubscriberModel.php:623
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/SubscriberModel.php(623): PDOStatement->execute()
+#1 /home/abiskglr/public_html/core/Controllers/Subscriber.php(557): SubscriberModel->getSiteSettings()
+#2 /home/abiskglr/public_html/mobile/home/includes/route.php(67): Subscriber->getSiteSettings()
+#3 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#4 {main}
+  thrown in /home/abiskglr/public_html/core/Models/SubscriberModel.php on line 623
+[21-Jun-2024 21:55:07 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[21-Jun-2024 21:55:09 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [2002] Can't connect to local server through socket '/var/lib/mysql/mysql.sock' (111) in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[25-Jun-2024 00:10:54 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[25-Jun-2024 00:10:59 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[25-Jun-2024 00:11:03 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[25-Jun-2024 00:11:17 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[25-Jun-2024 00:11:23 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[25-Jun-2024 00:11:27 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[25-Jun-2024 00:11:27 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[25-Jun-2024 00:11:30 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[25-Jun-2024 00:12:09 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[25-Jun-2024 00:12:13 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[25-Jun-2024 00:12:39 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[25-Jun-2024 00:14:22 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[25-Jun-2024 00:14:23 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[25-Jun-2024 00:14:24 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[25-Jun-2024 00:14:26 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[25-Jun-2024 00:14:29 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[25-Jun-2024 00:14:33 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[25-Jun-2024 00:15:33 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[25-Jun-2024 00:15:41 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[25-Jun-2024 00:16:27 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[25-Jun-2024 00:16:36 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[25-Jun-2024 00:16:39 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[25-Jun-2024 00:16:44 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[25-Jun-2024 00:17:36 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[09-Jul-2024 16:27:46 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[09-Jul-2024 16:27:46 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[09-Jul-2024 16:27:47 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[09-Jul-2024 16:27:55 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[09-Jul-2024 16:28:30 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[09-Jul-2024 16:28:44 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[09-Jul-2024 16:28:48 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[09-Jul-2024 16:28:48 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[09-Jul-2024 16:28:50 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[09-Jul-2024 16:29:01 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[09-Jul-2024 16:29:03 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[09-Jul-2024 16:29:05 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[09-Jul-2024 16:29:06 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[09-Jul-2024 16:29:07 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[09-Jul-2024 16:29:44 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(47): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[09-Jul-2024 16:29:55 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[09-Jul-2024 16:29:57 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[09-Jul-2024 16:29:58 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[09-Jul-2024 16:29:59 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[09-Jul-2024 16:30:00 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[09-Jul-2024 16:30:01 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[09-Jul-2024 16:30:04 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[09-Jul-2024 16:30:09 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[09-Jul-2024 16:30:10 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[09-Jul-2024 16:30:12 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[09-Jul-2024 16:30:13 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[09-Jul-2024 16:30:28 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[09-Jul-2024 16:30:28 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[09-Jul-2024 16:30:30 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[09-Jul-2024 16:30:43 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[09-Jul-2024 16:30:50 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[09-Jul-2024 16:31:08 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[09-Jul-2024 16:31:09 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[09-Jul-2024 16:31:45 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(47): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[09-Jul-2024 16:31:47 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(47): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[09-Jul-2024 16:31:50 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(47): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[09-Jul-2024 16:31:51 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(47): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[09-Jul-2024 16:31:56 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(47): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[09-Jul-2024 16:31:59 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(47): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[09-Jul-2024 16:32:20 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[09-Jul-2024 16:32:22 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[09-Jul-2024 16:32:31 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[09-Jul-2024 16:32:59 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[09-Jul-2024 16:33:01 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[09-Jul-2024 16:33:03 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[09-Jul-2024 16:33:07 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[09-Jul-2024 16:33:11 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[09-Jul-2024 16:33:16 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[09-Jul-2024 16:33:17 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[09-Jul-2024 16:33:20 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[09-Jul-2024 16:33:31 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[09-Jul-2024 16:33:49 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[09-Jul-2024 16:34:00 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[09-Jul-2024 16:34:08 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[09-Jul-2024 16:34:12 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[09-Jul-2024 16:34:33 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[09-Jul-2024 16:36:17 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[09-Jul-2024 16:36:23 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[09-Jul-2024 16:36:36 Africa/Lagos] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/Subscriber.php(56): Model->__construct()
+#3 /home/abiskglr/public_html/mobile/home/includes/route.php(66): Subscriber->__construct()
+#4 /home/abiskglr/public_html/mobile/login/index.php(24): require_once('/home/abiskglr/...')
+#5 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29

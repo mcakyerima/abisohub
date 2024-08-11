@@ -1,0 +1,7 @@
+null : {
+                "meter_number": "58000041838",
+            	"meter_type" : "prepaid",
+            	"amount" : "1000",
+            	"service" : "3
+"
+            }

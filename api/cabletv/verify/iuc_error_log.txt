@@ -1,0 +1,1 @@
+{"code":"000","content":{"error":"Incorrect SmartCard number. Please try with a correct one","WrongBillersCode":true}}

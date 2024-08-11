@@ -1,0 +1,1 @@
+{"id":"EAZY20240607114956HRRLZG56","ident":"EAZY20240607114956HRRLZG56","Status":"processing","api_response":"Dear customer you don't have any active data bundle. please dial *312*1# to buy a data bundle.. Partner new balance is 300.16GB. Sender number: 07070588905"}

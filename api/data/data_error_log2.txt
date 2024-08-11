@@ -1,0 +1,1 @@
+{"status":"fail","msg":"Server Connection Error","api_response_log":"{\"status\":\"fail\",\"msg\":\"Server Connection Error\"} : Failed to connect to www.gladtidingsdata.com port 443 after 128558 ms: Couldn't connect to server"} Failed to connect to www.gladtidingsdata.com port 443 after 128558 ms: Couldn't connect to server https://www.gladtidingsdata.com/api/data/

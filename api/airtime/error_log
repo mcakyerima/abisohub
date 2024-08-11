@@ -1,0 +1,17 @@
+[04-May-2024 15:17:27 Africa/Lagos] PHP Warning:  Undefined array key "response" in /home/abiskglr/public_html/api/airtime/index.php on line 339
+[09-Jul-2024 15:28:23 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/ApiAccess.php(8): Model->__construct()
+#3 /home/abiskglr/public_html/api/airtime/index.php(14): ApiAccess->__construct()
+#4 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29
+[09-Jul-2024 15:28:44 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/abiskglr/public_html/core/Models/Model.php:29
+Stack trace:
+#0 /home/abiskglr/public_html/core/Models/Model.php(29): PDO->__construct()
+#1 /home/abiskglr/public_html/core/Models/Model.php(23): Model->connectDb()
+#2 /home/abiskglr/public_html/core/Controllers/ApiAccess.php(8): Model->__construct()
+#3 /home/abiskglr/public_html/api/airtime/index.php(14): ApiAccess->__construct()
+#4 {main}
+  thrown in /home/abiskglr/public_html/core/Models/Model.php on line 29

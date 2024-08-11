@@ -1,0 +1,1 @@
+<?php //ADC Inc. Script. All Right Reserved ?>
