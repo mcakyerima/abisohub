@@ -197,47 +197,55 @@
 
 		//Validate Parameter From A From Submited With POST Method
 		public function validatePostParameters($parameterList) {
-			
-            $response = array();
+			$response = array();
 			$parameterResponse = array();
 			$msg = "";
-
-			//Fetch Parameters
-			foreach($parameterList AS $parameters):
-				if(!isset($_POST[$parameters["name"]]) && $parameters["required"] == true):
-					$msg = "Field ".ucwords($parameters["name"]) ." Is Required";  
-			
-				else:
-					
+		
+			// Initialize a log array to store debug information
+			$debugLog = array();
+		
+			// Fetch Parameters
+			foreach ($parameterList as $parameters) {
+				if (!isset($_POST[$parameters["name"]]) && $parameters["required"] == true) {
+					$msg = "Field " . ucwords($parameters["name"]) . " Is Required";
+					// Log missing parameter
+					$debugLog[] = "Missing field: " . $parameters["name"];
+				} else {
 					$fieldName = $parameters["name"];
 					$value = $_POST[$fieldName];
 					$dataType = $parameters["type"];
 					$format = $parameters["format"];
 					$required = $parameters["required"];
-
+		
+					// Log received parameter
+					$debugLog[] = "Received field: $fieldName with value: $value";
+		
 					$check = $this->validateParameter($fieldName, $value, $dataType, $format, $parameters["required"]);
-				
-					if($check["status"] == "success"):
-
+		
+					if ($check["status"] == "success") {
 						$parameterResponse[$fieldName] = $value;
-					
-					else: 
+						$debugLog[] = "Validation success for field: $fieldName";
+					} else {
 						$msg = $check["msg"];
-					endif;
-
-				endif;
-				
-				if(!empty($msg)){break;}
-
-			endforeach;
-			
+						$debugLog[] = "Validation failed for field: $fieldName with message: $msg";
+					}
+				}
+		
+				if (!empty($msg)) {
+					break;
+				}
+			}
+		
 			$response["status"] = (empty($msg)) ? "success" : "fail";
 			$response["msg"] = $msg;
 			$response["parameters"] = (!empty($msg)) ? "" : (object) $parameterResponse;
-
+		
+			// Add debug log to the response
+			$response["debug"] = $debugLog;
+		
 			return (object) $response;
-
 		}
+		
 
 		//Clean Parameter Type
 		public function cleanParameter($value, $dataType) {

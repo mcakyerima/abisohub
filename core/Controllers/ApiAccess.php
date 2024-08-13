@@ -40,6 +40,11 @@
             return $response;
 		}
 
+        // Signup user via API
+        public function registerUser($token, $data) {
+            //
+        }
+
         //Fetch Site Settings
         public function getSiteSettings(){
 			$result=$this->model->getSiteSettings();

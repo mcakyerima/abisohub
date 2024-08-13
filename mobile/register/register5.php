@@ -225,7 +225,8 @@ $("document").ready(function(){
             $('#submit-btn').removeClass("btn-primary");
             $('#submit-btn').addClass("btn-secondary");
             $('#submit-btn').html('<i class="fa fa-spinner fa-spin" aria-hidden="true"></i> Processing ...');
-            
+            var data = new FormData($(this)[0]);
+           
             $.ajax({
                 url:'../home/includes/route.php?register',
                 data: new FormData($(this)[0]),

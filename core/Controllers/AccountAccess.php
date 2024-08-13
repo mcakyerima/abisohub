@@ -28,9 +28,9 @@
 		    
  
 
-		//Register/Create User Account
-		public function registerUser(){
-			
+		// In AccountAccess.php
+
+		public function registerUser() {
 			$parameterList = [
 				["name" => "fname", "type" => "STRING", "format" => "text", "required" => true],
 				["name" => "lname", "type" => "STRING", "format" => "text", "required" => true],
@@ -45,34 +45,45 @@
 
 			$response = $this->validatePostParameters($parameterList);
 
-			if ($response->status == "success") :
+			if ($response->status === "success") {
+				$params = $response->parameters;
+				$fname = $params->fname;
+				$lname = $params->lname;
+				$email = $params->email;
+				$phone = $params->phone;
+				$state = $params->state;
+				$account = $params->account;
+				$referal = $params->referal ?? "";
+				$transpin = $params->transpin;
+				$password = $params->password;
 
-				$fname=$response->parameters->fname; $lname=$response->parameters->lname; $email=$response->parameters->email; $phone=$response->parameters->phone;
-				$state=$response->parameters->state; $account=$response->parameters->account; $referal=$response->parameters->referal; $transpin=$response->parameters->transpin;
-				$password=$response->parameters->password;
+				// Validate phone and password
+				if ($phone === $password) {
+					return json_encode(["status" => "fail", "msg" => "Phone Number Can't Be Used As Password"]);
+				}
+				if (in_array($password, ["12345678", "123456789"], true)) {
+					return json_encode(["status" => "fail", "msg" => "Please Set A More Secured Password"]);
+				}
+				if (in_array($transpin, ["12345", "00000", "00112", "01234"], true)) {
+					return json_encode(["status" => "fail", "msg" => "Please Set A More Secured Pin"]);
+				}
 
-				//Check If Phone Number Match Password
-				if($phone == $password){return json_encode(["status" => "fail","msg" => "Phone Number Can't Be Used As Password"]);}
-				if($password == "12345678"){return json_encode(["status" => "fail","msg" => "Please Set A More Secured Password"]);}
-				if($password == "123456789"){return json_encode(["status" => "fail","msg" => "Please Set A More Secured Password"]);}
-				if($transpin == "12345"){return json_encode(["status" => "fail","msg" => "Please Set A More Secured Pin"]);}
-				if($transpin == "00000"){return json_encode(["status" => "fail","msg" => "Please Set A More Secured Pin"]);}
-				if($transpin == "00112"){return json_encode(["status" => "fail","msg" => "Please Set A More Secured Pin"]);}
-				if($transpin == "01234"){return json_encode(["status" => "fail","msg" => "Please Set A More Secured Pin"]);}
+				// Register User
+				$check = $this->model->registerUser($fname, $lname, $email, $phone, $password, $state, $account, $referal, $transpin, true);
+				$checkData = json_decode($check);
 
-				//Register User
-
-				$check=$this->model->registerUser($fname,$lname,$email,$phone,$password,$state,$account,$referal,$transpin);
-				if($check->status == "success"){$result = json_encode(["status" => "success", "msg" => $check->msg]);}
-				else{ $result = json_encode(["status" => "error", "msg" => $check->msg]); }
-
-			else:
-				return json_encode(["status" => "fail","msg" => $response->msg]);
-			endif;
+				if (isset($checkData->status) && $checkData->status === "success") {
+					$result = json_encode(["status" => "success", "msg" => $checkData->msg, "apiKey" => $checkData->apiKey, "token" => $checkData->token]);
+				} else {
+					$result = json_encode(["status" => "error", "msg" => $checkData->msg ?? "An error occurred"]);
+				}
+			} else {
+				return json_encode(["status" => "fail", "msg" => $response->msg]);
+			}
 
 			return $result;
-
 		}
+
 
 		//Login User Account
 		public function loginUser(){
@@ -100,8 +111,10 @@
 		public function recoverUserLogin(){
 			extract($_POST);
 			$email=strip_tags($email);
+			$isApiRequest = strip_tags($isApiRequest);
+			if($isApiRequest == "") { $isApiRequest = false;} else { $isApiRequest = true;};
 			$email=$this->cleanParameter($email, "EMAIL");
-			$check=$this->model->recoverUserLogin($email);
+			$check=$this->model->recoverUserLogin($email, $isApiRequest);
 			return $check;
 		}
 

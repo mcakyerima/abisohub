@@ -5,7 +5,7 @@
     //Allowed API Headers
     header('Access-Control-Allow-Origin: *');
     header('Content-Type: application/json');
-    header("Access-Control-Allow-Methods: POST");
+    header("Access-Control-Allow-Methods: GET");
     header("Allow: GET, POST, OPTIONS, PUT, DELETE");
     header("Access-Control-Allow-Headers: X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Request-Method, Access-Control-Allow-Origin");
 
@@ -27,7 +27,6 @@
         }
         $result = $controller->validateAccessToken($token);
         if($result["status"] == "fail"){
-            // tell the user no products found
             header('HTTP/1.0 500 Unauthorized');
             $response["status"] = "fail";
             $response["msg"] = "Authorization token not found $token";
@@ -36,7 +35,6 @@
     }
     else{
         header('HTTP/1.0 500 Unauthorized');
-        // tell the user no products found
         $response["status"] = "fail";
         $response["msg"] = "Your authorization token is required.";
         echo json_encode($response); exit(); 

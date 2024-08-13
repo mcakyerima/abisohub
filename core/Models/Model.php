@@ -24,12 +24,24 @@
             global $sitename;
 			$this->sitename = $sitename;
         }
-        
-        public function connectDb(){
-            $pdo = new PDO("mysql:host=".self::$host.";dbname=".self::$dbName,self::$username,self::$password);
-	    	$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-	    	return $pdo;
+
+        public function connectDb()
+        {
+            try {
+                $pdo = new PDO("mysql:host=" . self::$host . ";dbname=" . self::$dbName, self::$username, self::$password);
+                $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                return $pdo;
+            } catch (PDOException $e) {
+                // Handle the exception or log it
+                die("Database connection failed: " . $e->getMessage());
+            }
         }
+
+        // public function connectDb(){
+        //     $pdo = new PDO("mysql:host=".self::$host.";dbname=".self::$dbName,self::$username,self::$password);
+	    // 	$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+	    // 	return $pdo;
+        // }
 
 		public function connect(){
 			return $this->dbh;

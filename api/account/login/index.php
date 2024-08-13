@@ -67,6 +67,8 @@
     $input = @file_get_contents("php://input");
     //decode the json file
     $body = json_decode($input);
+
+
     
     // Support Other API Format
     $phone= (isset($body->phone)) ? $body->phone : "";
@@ -108,6 +110,7 @@
         $response['msg'] = "Login Successfull";
         $response['name'] = $result["name"];
         $response['phone'] = $result["phone"];
+        $response['apiKey'] = $result["apiKey"];
         echo json_encode($response);
         exit();
     }
