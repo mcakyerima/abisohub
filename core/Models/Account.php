@@ -448,7 +448,7 @@
 					$email=$result->sEmail;
 					$subject="Account Recovery (".$this->sitename.")";
 					$message="<h3>Hi ".$result->sFname.", You Recently Requested For A Password Recovery. Use The Verification Code \"".$varCode."\" To Recover Your Account. Thank You For Using ".$this->sitename.".</h3>";
-					$check=self::sendMail($email,$subject,$message);
+					$check=$this->sendMail($email,$subject,$message);
 					if($check == 0){return 0;}
 					else{return 2;}
 				} else {

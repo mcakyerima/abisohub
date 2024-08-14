@@ -1,121 +1,116 @@
 <?php
 
-    use PHPMailer\PHPMailer\PHPMailer;
-    use PHPMailer\PHPMailer\SMTP;
-    use PHPMailer\PHPMailer\Exception;
+require_once dirname(__DIR__, 2) . '/vendor/autoload.php';
+require_once dirname(__DIR__, 2) . '/core/helpers/vendor/autoload.php';
 
 
-	class Model{
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+use Dotenv\Dotenv;
 
-		public static $host="localhost";
-		public static $dbName="abisohub_db"; //Database Name
-		public static $username="mcakyerima"; // Database Username
-		public static $password="Mcakyerima1"; //Database Password
- 
-        public $dbh;
-        
-		public $emailUsername="support@abisohub.com"; //Support Email Address
-		public $emailPassword="abisohub@1122"; //Support Email Password
+class Model {
 
-        public $sitename;
+    public $dbh;
+    public $sitename;
+    public $emailUsername;
+    public $emailPassword;
 
-        public function __construct(){
-            $this->dbh = $this->connectDb();
-            global $sitename;
-			$this->sitename = $sitename;
+    public function __construct() {
+        // Load .env variables
+        $this->loadEnv();
+
+        // Assign the loaded environment variables
+        $this->emailUsername = $_ENV['EMAIL_USERNAME'] ?? null;
+        $this->emailPassword = $_ENV['EMAIL_PASSWORD'] ?? null;
+
+        // Initialize database connection
+        $this->dbh = $this->connectDb();
+    }
+
+    private function loadEnv() {
+        $dotenv = Dotenv::createImmutable(dirname(__DIR__, 2));
+        $dotenv->load();
+    }
+    
+    public function connectDb() {
+        try {
+            $pdo = new PDO(
+                "mysql:host=" . ($_ENV['DB_HOST'] ?? '') . ";dbname=" . ($_ENV['DB_NAME'] ?? ''), 
+                $_ENV['DB_USERNAME'] ?? '', 
+                $_ENV['DB_PASSWORD'] ?? ''
+            );
+            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            return $pdo;
+        } catch (PDOException $e) {
+            // Handle the exception as a PDOException
+            die("Database connection failed: " . $e->getMessage());
         }
+    }
 
-        public function connectDb()
-        {
-            try {
-                $pdo = new PDO("mysql:host=" . self::$host . ";dbname=" . self::$dbName, self::$username, self::$password);
-                $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                return $pdo;
-            } catch (PDOException $e) {
-                // Handle the exception or log it
-                die("Database connection failed: " . $e->getMessage());
+    public function connect() {
+        return $this->dbh;
+    }
+
+    // Other methods...
+
+    public function sendMail($email, $subject, $message) {
+        global $sitename;
+        $mail = new PHPMailer(true);
+
+        try {
+            $mail->isSMTP();
+            $mail->Host = $_SERVER['SERVER_NAME'];
+            $mail->SMTPAuth = true;
+            $mail->Username = $this->emailUsername;
+            $mail->Password = $this->emailPassword;
+            $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+            $mail->Port = 465;
+
+            $mail->setFrom($this->emailUsername, $sitename);
+            $mail->addAddress($email);
+
+            $mail->isHTML(true);
+            $mail->Subject = $subject;
+            $mail->Body = $message;
+            $mail->AltBody = strip_tags($message);
+
+            $mail->send();
+            return 0;
+        } catch (Exception $e) {
+            return 1;
+        }
+    }
+
+    public function getConfigValue($list, $name) {
+        foreach($list as $item) {
+            if($item->name == $name) {
+                return $item->value;
             }
         }
+    }
 
-        // public function connectDb(){
-        //     $pdo = new PDO("mysql:host=".self::$host.";dbname=".self::$dbName,self::$username,self::$password);
-	    // 	$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-	    // 	return $pdo;
-        // }
+    public function getApiConfiguration() {
+        $dbh = $this->connect();
+        $sql = "SELECT * FROM apiconfigs";
+        $query = $dbh->prepare($sql);
+        $query->execute();
+        $results = $query->fetchAll(PDO::FETCH_OBJ);
+        return $results;
+    }
 
-		public function connect(){
-			return $this->dbh;
-		}
+    public function getSiteConfiguration() {
+        $dbh = $this->connect();
+        $sql = "SELECT * FROM sitesettings WHERE sId = 1";
+        $query = $dbh->prepare($sql);
+        $query->execute();
+        $results = $query->fetch(PDO::FETCH_OBJ);
+        return $results;
+    }
 
-		//Send Secure Email With SMTP
-		public function sendMail($email,$subject,$message){
-		    global $sitename;
-	        //Create an instance; passing `true` enables exceptions
-            $mail = new PHPMailer(true);
-
-	        try {
-                //Server settings
-                //$mail->SMTPDebug = SMTP::DEBUG_SERVER;                    //Enable verbose debug output
-                $mail->isSMTP();                                            //Send using SMTP
-                $mail->Host       = $_SERVER['SERVER_NAME'];                //Set the SMTP server to send through
-                $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-                $mail->Username   = $this->emailUsername;                   //SMTP username
-                $mail->Password   = $this->emailPassword;                   //SMTP password
-                $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
-                $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
-            
-                //Recipients
-                $mail->setFrom($this->emailUsername, $sitename);
-                $mail->addAddress($email);     //Add a recipient
-                
-                //Content
-                $mail->isHTML(true);                                  //Set email format to HTML
-                $mail->Subject = $subject;
-                $mail->Body    = $message;
-                $mail->AltBody = strip_tags($message);
-            
-                $mail->send();
-                return 0;
-                return 'Message has been sent';
-            } catch (Exception $e) {
-                return 1;
-                return "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
-            }
-	    }
-
-        //Get Api Config Values
-        public function getConfigValue($list,$name){
-			foreach($list AS $item){
-				if($item->name == $name){return $item->value;}
-			}
-		}
-
-        //Get API Setting
-		public function getApiConfiguration(){
-			$dbh=self::connect();
-			$sql = "SELECT * FROM apiconfigs";
-            $query = $dbh->prepare($sql);
-            $query->execute();
-            $results=$query->fetchAll(PDO::FETCH_OBJ);
-            return $results;
-		}
-
-        //Get Site Setting
-		public function getSiteConfiguration(){
-			$dbh=self::connect();
-			$sql = "SELECT * FROM sitesettings WHERE sId=1";
-            $query = $dbh->prepare($sql);
-            $query->execute();
-            $results=$query->fetch(PDO::FETCH_OBJ);
-            return $results;
-		}
-
-	    
-        public function __destruct()
-        {
-            $dbh="";
-        }
-
-	}
+    public function __destruct() {
+        $dbh = null;
+    }
+}
 
 ?>
