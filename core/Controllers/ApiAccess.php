@@ -45,12 +45,40 @@
             //
         }
 
+        // get all data plans
+        public function getAllDataPlans()
+        {
+            $response = $this->model->getAllDataPlans();
+            $response["status"] = "success";
+            return $response;
+        }
+
+        /**
+         * Get all Networks and  Id's
+         */
+        public function getAllNetworks($id)
+        {
+            $response = $this->model->getAllNetworks($id);
+            $response["status"] = "success";
+            return $response;
+        }
+
         //Fetch Site Settings
         public function getSiteSettings(){
 			$result=$this->model->getSiteSettings();
             return $result;
 		}
 
+        // fetch use transactions by useId
+        public function fetchTransactionsById($userId, $limit) {
+            $result = $this->model->fetchTransactionsByUserId($userId, $limit);
+            return $result;
+        }
+
+
+        //get all Data Plans
+
+        
         //Verify Network Id
         public function verifyNetworkId($network){
             $result = $this->model->verifyNetworkId($network);

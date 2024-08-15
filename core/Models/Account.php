@@ -154,7 +154,8 @@
 				"status" => "success",
 				"msg" => "Registration successful",
 				"apiKey" => $apiKey,
-				"token" => isset($userLoginToken) ? $userLoginToken : null
+				"token" => isset($userLoginToken) ? $userLoginToken : null,
+				"userId" => $lastInsertId
 			];
 
 
@@ -418,6 +419,7 @@
 				$response["name"] = $result->sFname . " " . $result->sLname;
 				$response["phone"] = $result->sPhone;
 				$response["apiKey"] = $result->sApiKey;
+				$response["userId"] = $result->sId;
 				
 				return $response;
 	      	}
@@ -448,7 +450,7 @@
 					$email=$result->sEmail;
 					$subject="Account Recovery (".$this->sitename.")";
 					$message="<h3>Hi ".$result->sFname.", You Recently Requested For A Password Recovery. Use The Verification Code \"".$varCode."\" To Recover Your Account. Thank You For Using ".$this->sitename.".</h3>";
-					$check=$this->sendMail($email,$subject,$message);
+					$check=self::sendMail($email,$subject,$message);
 					if($check == 0){return 0;}
 					else{return 2;}
 				} else {
@@ -494,7 +496,6 @@
 	      	else{return 1;}
 
 	    }
-
 
 		public function createVirtualBankAccount($id, $fname, $lname, $email, $monnifyApi, $monnifySecret, $monnifyContract)
 		{

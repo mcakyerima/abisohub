@@ -34,6 +34,69 @@
             return $result;
 		}
  
+        /**
+		 * Fetch transactions by user ID with a limit.
+		 *
+		 * This function retrieves transactions for a specified user ID, with an optional limit on the number of transactions returned.
+		 * It returns the transactions if found, or 0 if no transactions are found.
+		 *
+		 * @param string $userId The ID of the user whose transactions are to be fetched.
+		 * @param int $limit The maximum number of transactions to fetch (default is 10).
+		 * @return array|int An array of transactions if found, or 0 if no transactions are found.
+		 */
+		public function fetchTransactionsByUserId($userId, $offset) {
+			$dbh = $this->connect();
+			$stmt = 'SELECT * FROM transactions WHERE sId = :userId LIMIT :offset';
+			$query = $dbh->prepare($stmt);
+			$query->bindParam(':userId', $userId, PDO::PARAM_INT);
+			$query->bindParam(':offset', $offset, PDO::PARAM_INT);
+			$query->execute();
+
+			// Check if there are any transactions and return the result
+			$transactions = $query->fetchAll(PDO::FETCH_ASSOC);
+
+            // return $transactions;
+
+            if (count($transactions) > 0) {
+                return $transactions;
+            } else {
+                return "No transactions found for user.";
+            }
+		}
+        
+
+        /**
+         * Fetches all Data plans in Database
+         */
+        public function getAllDataPlans()
+        {
+            $dbh = $this->connect();
+            $sql = "SELECT * FROM dataplans";
+            $query = $dbh->prepare($sql);
+            $query->execute();
+            $result=$query->fetchAll(PDO::FETCH_ASSOC);
+            return $result;
+        }
+
+        /**
+         * Fetches all Networks in the Database
+         */
+        public function getAllNetworks($id = null)
+        {
+            $dbh = $this->connect();
+            $sql = "SELECT * FROM networkId";
+            if (isset($id)) {
+                $sql .= " WHERE nId = '$id'";
+            }
+            $query = $dbh->prepare($sql);
+            $query->execute();
+            $result=$query->fetchAll(PDO::FETCH_ASSOC);
+            return $result;
+        }
+
+
+
+
         //Verify Network Id
 		public function verifyNetworkId($network){
 			$dbh=$this->connect();

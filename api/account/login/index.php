@@ -111,6 +111,7 @@
         $response['name'] = $result["name"];
         $response['phone'] = $result["phone"];
         $response['apiKey'] = $result["apiKey"];
+        $response["userId"] = $result["userId"];
         echo json_encode($response);
         exit();
     }
