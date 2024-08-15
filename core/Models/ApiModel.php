@@ -68,10 +68,13 @@
         /**
          * Fetches all Data plans in Database
          */
-        public function getAllDataPlans()
+        public function getAllDataPlans($networkId = null)
         {
             $dbh = $this->connect();
             $sql = "SELECT * FROM dataplans";
+            if (isset($networkId)){
+                $sql .= " WHERE datanetwork = '$networkId'";
+            }
             $query = $dbh->prepare($sql);
             $query->execute();
             $result=$query->fetchAll(PDO::FETCH_ASSOC);
@@ -110,10 +113,13 @@
         public function getCablePlans($id = null)
         {
             $dbh = $this->connect();
-            $sql = "SELECT * FROM cableId";
+            $sql = "SELECT * FROM cableId as c";
             if (isset($id))
             {
-                $sql .= " WHERE cId = '$id'";
+                $sql .= " JOIN cableplans as cp
+                          ON c.cId = cp.cableprovider
+                          WHERE cp.cableprovider = '$id'
+                          AND c.cId = '$id'";    
             }
             $query = $dbh->prepare($sql);
             $query->execute();

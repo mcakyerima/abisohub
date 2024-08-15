@@ -45,10 +45,14 @@
             //
         }
 
-        // get all data plans
-        public function getAllDataPlans()
+        /**
+         * Fetches all data plans and according to network
+         * if network id passed
+         * @param string $network: The Id of the network.
+         */
+        public function getAllDataPlans($networkId)
         {
-            $response = $this->model->getAllDataPlans();
+            $response = $this->model->getAllDataPlans($networkId);
             $response["status"] = "success";
             return $response;
         }

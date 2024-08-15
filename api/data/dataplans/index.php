@@ -61,17 +61,17 @@ date_default_timezone_set('Africa/Lagos');
     // -------------------------------------------------------------------
     //  Get The Request Details
     // -------------------------------------------------------------------
-       
-$input = @file_get_contents("php://input");
-//decode the json file
-$body = json_decode($input, true);
+// Get the requested URI
+$uri = $_SERVER['REQUEST_URI'];
 
-// Extract userId and limit from the request body
-$userId = isset($body['userId']) ? $body['userId'] : '';
-$limit = isset($body['limit']) ? $body['limit'] : "";
+// Split the URI into segments
+$uriSegments = explode('/', trim($uri, '/'));
 
+// Check if an ID is provided in the URL
+$networkId = isset($uriSegments[3]) ? (int) $uriSegments[3] : null;
+// echo $networkId;
 
-$result = $controller->getAllDataPlans();
+$result = $controller->getAllDataPlans($networkId);
 header('Content-Type: application/json');
 echo json_encode($result);
 exit();
