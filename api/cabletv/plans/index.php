@@ -65,9 +65,9 @@ $uri = $_SERVER['REQUEST_URI'];
 $uriSegments = explode('/', trim($uri, '/'));
 
 // Check if an ID is provided in the URL
-$networkId = isset($uriSegments[3]) ? (int) $uriSegments[3] : null;
+$id = isset($uriSegments[3]) ? (int) $uriSegments[3] : null;
 
-$result = $controller->getAllNetworks($networkId);
+$result = $controller->getCablePlans($id);
 
 // Send JSON response
 header('Content-Type: application/json');

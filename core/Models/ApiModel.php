@@ -94,8 +94,67 @@
             return $result;
         }
 
+        public function getElectricPlans($id = null)
+        {
+            $dbh = $this->connect();
+            $sql = "SELECT * FROM electricityid";
+            if (isset($id)) {
+                $sql .= " WHERE eId = '$id'";
+            }
+            $query = $dbh->prepare($sql);
+            $query->execute();
+            $result = $query->fetchAll(PDO::FETCH_ASSOC);
+            return $result;
+        }
 
+        public function getCablePlans($id = null)
+        {
+            $dbh = $this->connect();
+            $sql = "SELECT * FROM cableId";
+            if (isset($id))
+            {
+                $sql .= " WHERE cId = '$id'";
+            }
+            $query = $dbh->prepare($sql);
+            $query->execute();
+            $result = $query->fetchAll(PDO::FETCH_ASSOC);
+            return $result;
+        }
 
+        public function getAllExams($id = null)
+        {
+            $dbh = $this->connect();
+            $sql = "SELECT * FROM examId";
+            if (isset($id))
+            {
+                $sql .= " WHERE eId = '$id'";
+            }
+            $query = $dbh->prepare($sql);
+            $query->execute();
+
+            $result = $query->fetchAll(PDO::FETCH_ASSOC);
+            return $result;
+        }
+
+        public function getAirtimePlans($planId = null, $networkId = null)
+        {
+            $dbh = $this->connect();
+            $sql = "SELECT * FROM airtime";
+            if (isset($planId))
+            {
+                $sql .= " WHERE aId = $planId";
+            }
+            if (isset($networkId))
+            {
+                $sql .= " AND aNetwork = $networkId";
+            }
+            $query = $dbh->prepare($sql);
+            $query->execute();
+
+            $result = $query->fetchAll(PDO::FETCH_ASSOC);
+
+            return $result;
+        }
 
         //Verify Network Id
 		public function verifyNetworkId($network){

@@ -55,11 +55,62 @@
 
         /**
          * Get all Networks and  Id's
+         * @param string $id id of the Network to be fetched
+         * @return array array of the Network and Id's
          */
         public function getAllNetworks($id)
         {
             $response = $this->model->getAllNetworks($id);
             $response["status"] = "success";
+            return $response;
+        }
+
+        /**
+         * Get all the Electric Plans
+         * @param: string $id optional, the id of the network
+         * @return: array of the Electric plans
+         */
+        public function getElectricPlans($id)
+        {
+            $response = $this->model->getElectricPlans($id);
+            $response["status"] = "success";
+            return $response;
+        }
+
+        /**
+         * Get all Cable plans
+         * @param $id string id of the Cable
+         * @return array array of Cable plans
+         */
+        public function getCablePlans($id)
+        {
+            $response = $this->model->getCablePlans($id);
+            $response["status"] = "success";
+            return $response;
+        }
+
+        /**
+         * Get all exam types and pins
+         * @param integer $id, id of the exam type
+         * @return array array of exam types and pins
+         */
+        public function getAllExams($id)
+        {
+            $response = $this->model->getAllExams($id);
+            $response['status'] = "success";
+            return $response;
+        }
+
+        /**
+         * Get Airtime Plans and network ID's
+         * @param integer $planId: the plan ID of the Aitime
+         * @param integer $networkId: the network ID 
+         * @return array An array of plan IDs and network IDs
+         */
+        public function getAirtimePlans($planId, $networkId)
+        {
+            $response = $this->model->getAirtimePlans($planId, $networkId);
+            $response['status'] = "success";
             return $response;
         }
 

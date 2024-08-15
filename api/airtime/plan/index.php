@@ -58,16 +58,20 @@ if ((isset($headers['Authorization']) || isset($headers['authorization'])) || (i
 // -------------------------------------------------------------------
 //  Get The Request Details
 // -------------------------------------------------------------------
+
 // Get the requested URI
 $uri = $_SERVER['REQUEST_URI'];
 
 // Split the URI into segments
 $uriSegments = explode('/', trim($uri, '/'));
 
-// Check if an ID is provided in the URL
-$networkId = isset($uriSegments[3]) ? (int) $uriSegments[3] : null;
+// Plan ID and Network ID are optional, so let's check if they are provided
+$planId = isset($uriSegments[3]) ? (int) $uriSegments[3] : null;
+$networkId = isset($uriSegments[5]) ? (int) $uriSegments[5] : null;
 
-$result = $controller->getAllNetworks($networkId);
+// var_dump($networkId, $planId);
+// Call the controller method with the parameters
+$result = $controller->getAirtimePlans($planId, $networkId);
 
 // Send JSON response
 header('Content-Type: application/json');
