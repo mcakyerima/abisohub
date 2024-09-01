@@ -1,2 +1,2 @@
 # abisohub
-Abisub data reselling platform
+Abisub data reselling platform built with php
