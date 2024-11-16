@@ -1,0 +1,31 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Allow requests to existing files and directories
+    RewriteCond %{REQUEST_FILENAME} -f [OR]
+    RewriteCond %{REQUEST_FILENAME} -d
+    RewriteRule ^ - [L]
+
+    # Route for airtime plans with parameters
+    RewriteRule ^airtime/plan/([0-9]+)/networkId/([0-9]+)$ /abisohub/api/airtime/plan/index.php?planId=$1&networkId=$2 [QSA,L]
+    
+    # Route for data plans (with or without an ID)
+    RewriteRule ^data/dataplans/([0-9]+)$ /abisohub/api/data/dataplans/index.php?planId=$1 [QSA,L]
+    RewriteRule ^data/dataplans/?$ /abisohub/api/data/dataplans/index.php [QSA,L]
+
+    # Generic dynamic route: /{module}/{action}/{optional_param_1}/{optional_param_2}/...
+    RewriteRule ^([^/]+)/([^/]+)/?(.*)$ /abisohub/api/$1/$2/index.php?params=$3 [QSA,L]
+
+    # Fallback to index.php for unmatched routes
+    RewriteRule ^.*$ /abisohub/api/index.php [QSA,L]
+
+    # Ensure OPTIONS method is handled for CORS preflight requests
+    RewriteCond %{REQUEST_METHOD} OPTIONS
+    RewriteRule ^(.*)$ $1 [R=200,L]
+</IfModule>
+
+<IfModule mod_headers.c>
+    Header always set Access-Control-Allow-Origin "*"
+    Header always set Access-Control-Allow-Methods "POST, GET, OPTIONS, DELETE, PUT"
+    Header always set Access-Control-Allow-Headers "Authorization, Token, Origin, X-Requested-With, Content-Type, Accept"
+</IfModule>

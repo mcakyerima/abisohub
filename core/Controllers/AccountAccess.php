@@ -73,7 +73,8 @@
 				$checkData = json_decode($check);
 
 				if (isset($checkData->status) && $checkData->status === "success") {
-					$result = json_encode(["status" => "success", "msg" => $checkData->msg, "apiKey" => $checkData->apiKey, "token" => $checkData->token]);
+					$result = json_encode(["status" => "success", "msg" => $checkData->msg, "apiKey" => $checkData->apiKey, "token" => $checkData->token, "pin" => $checkData->pin, "userId" => $checkData->userId]);
+					
 				} else {
 					$result = json_encode(["status" => "error", "msg" => $checkData->msg ?? "An error occurred"]);
 				}

@@ -3,16 +3,13 @@
     <div class="card">
 
         <div class="content">
-            
+
             <div>
                 <h5>Payment Services</h5>
-                <hr/>
+                <hr />
             </div>
 
             <div class="row text-center mb-0 mt-0">
-
-                
-
                 <a href="buy-airtime" class="col-3 mt-2 mb-2 ">
                     <span class="icon rounded-lg" style="color:#00cc00;">
                         <i class="fa fa-phone font-18"></i>
@@ -80,15 +77,15 @@
     <div class="card">
 
         <div class="content">
-            
+
             <div>
                 <h5>Others</h5>
-                <hr/>
+                <hr />
             </div>
 
             <div class="row text-center mb-0 mt-0">
 
-                
+
 
                 <a href="pricing" class="col-3 mt-2 mb-2">
                     <span class="icon rounded-lg" style="color:#0066ff;">
@@ -104,7 +101,7 @@
                     <p class="mb-0 pt-1 font-13">Referrals</p>
                 </a>
 
-                
+
 
                 <a href="profile" class="col-3 mt-2 mb-2">
                     <span class="icon rounded-lg" style="color:#0066ff;">

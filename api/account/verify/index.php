@@ -9,7 +9,7 @@ header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json");
 header("Access-Control-Allow-Methods: POST");
 header("Allow: POST, OPTIONS, PUT, DELETE");
-header("Acess-Control-Allow-Headers: X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Request-Method, Access-Control-Allow-Origin");
+header("Access-Control-Allow-Headers: X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Request-Method, Access-Control-Allow-Origin");
 
 $headers = apache_request_headers();
 $response = array();
@@ -18,96 +18,100 @@ $controller = new AccountAccess;
 date_default_timezone_set('Africa/Lagos');
 
 
-    // -------------------------------------------------------------------
-    //  Check Request Method
-    // -------------------------------------------------------------------
+// -------------------------------------------------------------------
+//  Check Request Method
+// -------------------------------------------------------------------
 
-    $requestMethod = $_SERVER["REQUEST_METHOD"]; 
-    if ($requestMethod !== 'POST') {
-        header('HTTP/1.0 400 Bad Request');
-        $response["status"] = "fail";
-        $response["msg"] = "Only POST  method is allowed";
-        echo json_encode($response); exit(); 
-    } 
-    
-    // -------------------------------------------------------------------
-    //  Check For Api Authorization
-    // -------------------------------------------------------------------
-    
-    if((isset($headers['Authorization']) || isset($headers['authorization'])) || (isset($headers['Token']) || isset($headers['token']))){
-        
-        if((isset($headers['Authorization']) || isset($headers['authorization']))){
-            $token = trim(str_replace("Token", "", (isset($headers['Authorization'])) ? $headers['Authorization'] : $headers['authorization']));
-        }
-        
-        if((isset($headers['Token']) || isset($headers['token']))){
-            $token = trim(str_replace("Token", "", (isset($headers['Token'])) ? $headers['Token'] : $headers['token']));
-        }
-        
-        
-        if($token <> date("Ymd")){
-            header('HTTP/1.0 401 Unauthorized');
-            $response["status"] = "fail";
-            $response["msg"] = "Authorization token not found $token";
-            echo json_encode($response); exit(); 
-        }
-        
+$requestMethod = $_SERVER["REQUEST_METHOD"];
+if ($requestMethod !== 'POST') {
+    header('HTTP/1.0 400 Bad Request');
+    $response["status"] = "fail";
+    $response["msg"] = "Only POST  method is allowed";
+    echo json_encode($response);
+    exit();
+}
+
+// -------------------------------------------------------------------
+//  Check For Api Authorization
+// -------------------------------------------------------------------
+
+if ((isset($headers['Authorization']) || isset($headers['authorization'])) || (isset($headers['Token']) || isset($headers['token']))) {
+
+    if ((isset($headers['Authorization']) || isset($headers['authorization']))) {
+        $token = trim(str_replace("Token", "", (isset($headers['Authorization'])) ? $headers['Authorization'] : $headers['authorization']));
     }
-    else{
+
+    if ((isset($headers['Token']) || isset($headers['token']))) {
+        $token = trim(str_replace("Token", "", (isset($headers['Token'])) ? $headers['Token'] : $headers['token']));
+    }
+
+
+    if ($token <> date("Ymd")) {
         header('HTTP/1.0 401 Unauthorized');
         $response["status"] = "fail";
-        $response["msg"] = "Your authorization token is required.";
-        echo json_encode($response); exit(); 
+        $response["msg"] = "Authorization token not found $token";
+        echo json_encode($response);
+        exit();
     }
+} else {
+    header('HTTP/1.0 401 Unauthorized');
+    $response["status"] = "fail";
+    $response["msg"] = "Your authorization token is required.";
+    echo json_encode($response);
+    exit();
+}
 
-    // -------------------------------------------------------------------
-    //  Get The Request Details
-    // -------------------------------------------------------------------
-     
-    $input = @file_get_contents("php://input");
-    //decode the json file
-    $body = json_decode($input, true);
+// -------------------------------------------------------------------
+//  Get The Request Details
+// -------------------------------------------------------------------
 
-    // Check if decoding was successfull
-    if ($body == nulL && json_last_error() !== JSON_ERROR_NONE) {
-        header("HTTP/1.0 400 Bad Request");
-        $response["status"] = "fail";
-        $response["msg"] = "Invalid JSON payload";
-        echo json_encode($response); exit();
-    }
+$input = @file_get_contents("php://input");
+//decode the json file
+$body = json_decode($input, true);
 
-    $_POST = $body;
+// Check if decoding was successfull
+if ($body == nulL && json_last_error() !== JSON_ERROR_NONE) {
+    header("HTTP/1.0 400 Bad Request");
+    $response["status"] = "fail";
+    $response["msg"] = "Invalid JSON payload";
+    echo json_encode($response);
+    exit();
+}
 
-    $email = (isset($body->email)) ? $body->email : '';
+$_POST = $body;
 
-    $code = (isset($body->code)) ? $body->code : "";
+$email = (isset($body->email)) ? $body->email : '';
 
-    $password = (isset($body->password)) ? $body->password : "";
-    
-    $email = $controller->cleanParameter($email, "EMAIL");
+$code = (isset($body->code)) ? $body->code : "";
 
-    $check = $controller->verifyRecoveryCode($email, $code);
-    if ($check == 0) {
-      // change pin
-      $change_pin = $controller->updateUserKey($email, $code, $password);
-      
-      if ($change_pin == 0) {
+$password = (isset($body->password)) ? $body->password : "";
+
+$email = $controller->cleanParameter($email, "EMAIL");
+
+$check = $controller->verifyRecoveryCode($email, $code);
+if ($check == 0) {
+    // change pin
+    $change_pin = $controller->updateUserKey($email, $code, $password);
+
+    if ($change_pin == 0) {
         // return success
         $response["status"] = "success";
         $response["msg"] = "Password changed successfully";
         header("Content-Type: application/json");
-        echo json_encode($response); exit();
-      } else {
+        echo json_encode($response);
+        exit();
+    } else {
         // return error
         $response["status"] = "error";
         $response["msg"] = "An error occurred";
         header("Content-Type: application/json");
-        echo json_encode($response); exit();
-      }
-    } else {
+        echo json_encode($response);
+        exit();
+    }
+} else {
     // return wrong pin
     $response["error"] = "Invalid code";
-    }
-    header('Content-Type: application/json');
-    echo json_encode($response);
-    exit();
+}
+header('Content-Type: application/json');
+echo json_encode($response);
+exit();

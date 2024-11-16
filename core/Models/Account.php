@@ -1,42 +1,54 @@
  <?php
 
-	class Account extends Model{
-       
+	class Account extends Model
+	{
+
 		//Verify Admin Login Deatils
-		public function verifyAdminAccount($uname,$pass,$pin){
-			$sql ="SELECT * FROM sysusers WHERE sysUsername=:uname AND sysToken=:password";
-			if(!empty($pin)){$pin=substr(sha1(md5($pin)), 3, 10); $sql.=" AND sysPinToken=:token";}
-		    
-			$query= $this->connect()->prepare($sql);
-		    $query-> bindParam(':uname', $uname, PDO::PARAM_STR);
-		    $query-> bindParam(':password', $pass, PDO::PARAM_STR);
-		    if(!empty($pin)){$query-> bindParam(':token', $pin, PDO::PARAM_STR);}
-		    $query-> execute();
+		public function verifyAdminAccount($uname, $pass, $pin)
+		{
+			$sql = "SELECT * FROM sysusers WHERE sysUsername=:uname AND sysToken=:password";
+			if (!empty($pin)) {
+				$pin = substr(sha1(md5($pin)), 3, 10);
+				$sql .= " AND sysPinToken=:token";
+			}
 
-		    $result=$query->fetch(PDO::FETCH_ASSOC);
-		    
-		    if($query->rowCount() > 0){
-				
-		    		if($result["sysStatus"] <> 0){return json_encode(["status"=>"blocked"]); }
-		    		if($result["sysPinStatus"] == 1 && empty($pin)){return json_encode(["status"=>"pinrequired"]);}
+			$query = $this->connect()->prepare($sql);
+			$query->bindParam(':uname', $uname, PDO::PARAM_STR);
+			$query->bindParam(':password', $pass, PDO::PARAM_STR);
+			if (!empty($pin)) {
+				$query->bindParam(':token', $pin, PDO::PARAM_STR);
+			}
+			$query->execute();
 
-		    		$_SESSION['sysUser']=$result["sysUsername"];
-		            $_SESSION['sysRole']=$result["sysRole"];
-		            $_SESSION['sysName']=$result["sysName"];
-		            $_SESSION['sysId']=$result["sysId"];
-		    		return json_encode(["status"=>"success"]);
-		   	} else {return json_encode(["status"=>"invalid"]);}
+			$result = $query->fetch(PDO::FETCH_ASSOC);
 
-		} 
+			if ($query->rowCount() > 0) {
 
-		public function verifyAdminAccount2(){
-			$sql ="SELECT sysId,sysName,sysStatus,sysUsername,sysRole FROM sysusers";
-		    $query= $this->connect()->prepare($sql);
-		    $query-> execute();
-		    $result=$query->fetchAll(PDO::FETCH_ASSOC);
-		   	return $result;
+				if ($result["sysStatus"] <> 0) {
+					return json_encode(["status" => "blocked"]);
+				}
+				if ($result["sysPinStatus"] == 1 && empty($pin)) {
+					return json_encode(["status" => "pinrequired"]);
+				}
 
-		} 
+				$_SESSION['sysUser'] = $result["sysUsername"];
+				$_SESSION['sysRole'] = $result["sysRole"];
+				$_SESSION['sysName'] = $result["sysName"];
+				$_SESSION['sysId'] = $result["sysId"];
+				return json_encode(["status" => "success"]);
+			} else {
+				return json_encode(["status" => "invalid"]);
+			}
+		}
+
+		public function verifyAdminAccount2()
+		{
+			$sql = "SELECT sysId,sysName,sysStatus,sysUsername,sysRole FROM sysusers";
+			$query = $this->connect()->prepare($sql);
+			$query->execute();
+			$result = $query->fetchAll(PDO::FETCH_ASSOC);
+			return $result;
+		}
 
 		/**
 		 * Register/Create New User Account
@@ -54,7 +66,8 @@
 		 * 
 		 * @return string JSON encoded response
 		 */
-		public function registerUser($fname, $lname, $email, $phone, $password, $state, $account, $referal, $transpin, $isApiRequest = false) {
+		public function registerUser($fname, $lname, $email, $phone, $password, $state, $account, $referal, $transpin, $isApiRequest = false)
+		{
 			$dbh = $this->connect();
 
 			// Verify registration details
@@ -150,15 +163,14 @@
 				}
 
 				// Prepare response
-			$data = [
-				"status" => "success",
-				"msg" => "Registration successful",
-				"apiKey" => $apiKey,
-				"token" => isset($userLoginToken) ? $userLoginToken : null,
-				"userId" => $lastInsertId
-			];
-
-
+				$data = [
+					"status" => "success",
+					"msg" => "Registration successful",
+					"apiKey" => $apiKey,
+					"token" => isset($userLoginToken) ? $userLoginToken : null,
+					"pin" => isset($transpin) ? $transpin : "",
+					"userId" => $lastInsertId
+				];
 			} else {
 				$data = ["status" => "fail", "msg" => "Unexpected Error, Please Try Again Later"];
 			}
@@ -169,34 +181,34 @@
 
 		// //Register/Create New User Account
 		// public function registerUser($fname,$lname,$email,$phone,$password,$state,$account,$referal,$transpin){
-			
+
 		// 	//if registration is done by admin, dont save cookies data
 		// 	if($referal == "admin"){$saveCookies=FALSE; $referal="";}else{$saveCookies=TRUE;}
 
 		// 	//Verify Registration Details
 		// 	$dbh=$this->connect();
-	    // 	$c="SELECT sEmail,sPhone,sType FROM subscribers WHERE ";
+		// 	$c="SELECT sEmail,sPhone,sType FROM subscribers WHERE ";
 		// 	$c.= ($email<>"") ? " sEmail=:e OR sPhone=:p" : " sPhone=:p";
-	    // 	$queryC = $dbh->prepare($c);
-	    // 	if($email<>""){$queryC->bindParam(':e',$email,PDO::PARAM_STR);}
-	    //  	$queryC->bindParam(':p',$phone,PDO::PARAM_STR);
-	    //  	$queryC->execute();
-	    //   	$result=$queryC->fetch(PDO::FETCH_ASSOC);
-	    //   	$data=4;
+		// 	$queryC = $dbh->prepare($c);
+		// 	if($email<>""){$queryC->bindParam(':e',$email,PDO::PARAM_STR);}
+		//  	$queryC->bindParam(':p',$phone,PDO::PARAM_STR);
+		//  	$queryC->execute();
+		//   	$result=$queryC->fetch(PDO::FETCH_ASSOC);
+		//   	$data=4;
 
-	    //   	//Output Error Message If Data Already Exist
-	    //   	if($queryC->rowCount() > 0){
-	          
-	    //       if($result["sPhone"] == $phone){$data = ["status" => "error", "msg" => "Phone Number Already Exist"]; }
-	    //       if($email<>""){if($result["sEmail"] == $email){ $data = ["status" => "error", "msg" => "Email Already Exist"]; }}
-	    //       if($result["sEmail"] == $email && $result["sPhone"] == $phone){$data =  ["status" => "error", "msg" => "Phone Number And Email Already Exist"]; }
-	          
-	    //       return (object) $data; 
-	    //   	}
-	      
-	    //   	//Insert And Register Member
-	    //   	else{
-			   
+		//   	//Output Error Message If Data Already Exist
+		//   	if($queryC->rowCount() > 0){
+
+		//       if($result["sPhone"] == $phone){$data = ["status" => "error", "msg" => "Phone Number Already Exist"]; }
+		//       if($email<>""){if($result["sEmail"] == $email){ $data = ["status" => "error", "msg" => "Email Already Exist"]; }}
+		//       if($result["sEmail"] == $email && $result["sPhone"] == $phone){$data =  ["status" => "error", "msg" => "Phone Number And Email Already Exist"]; }
+
+		//       return (object) $data; 
+		//   	}
+
+		//   	//Insert And Register Member
+		//   	else{
+
 		// 		$hash=substr(sha1(md5($password)), 3, 10);
 		// 		$apiKey = substr(str_shuffle("0123456789ABCDEFGHIJklmnopqrstvwxyzAbAcAdAeAfAgAhBaBbBcBdC1C23C3C4C5C6C7C8C9xix2x3"), 0, 60).time();
 		// 		$varCode=mt_rand(2000,9000);
@@ -218,10 +230,10 @@
 		//        $query->bindParam(':pin',$transpin,PDO::PARAM_INT);
 		//        $query->bindParam(':code',$varCode,PDO::PARAM_STR);
 		//        $query->execute();
-		       
+
 		//        $lastInsertId = $dbh->lastInsertId();
 		//        if($lastInsertId){
-		       		 
+
 		// 			$data=0; 
 
 		// 			if($saveCookies){
@@ -229,14 +241,14 @@
 		// 				$_SESSION["loginName"]=$fname . " " . $lname;
 		// 				$_SESSION["loginEmail"]=$email;
 		// 				$_SESSION["loginPhone"]=$phone;
-						
+
 		// 				$loginId=base64_encode($lastInsertId);
 		// 				$loginState=base64_encode($state);
 		// 				$loginPhone=base64_encode($phone);
 		// 				$loginAccount=base64_encode("1");
 		// 				$loginName=base64_encode($fname);
-						
-						
+
+
 		// 				setcookie("loginId", $loginId, time() + (2592000 * 30), "/");
 		// 				setcookie("loginState", $loginState, time() + (2592000 * 30), "/");
 		// 				setcookie("loginAccount", $loginAccount, time() + (2592000 * 30), "/");
@@ -259,7 +271,7 @@
 		// 				$queryAc->bindParam(':token',$userLoginToken,PDO::PARAM_STR);
 		// 				$queryAc->execute();
 		// 			}
-					
+
 		// 			//Get API Details
 		// 			$d=$this->getApiConfiguration();
 		// 			$a=$this->getSiteConfiguration();
@@ -268,12 +280,12 @@
 		// 			$monifySecrete = $this->getConfigValue($d,"monifySecrete");
 		// 			$monifyContract = $this->getConfigValue($d,"monifyContract");
 		// 			$adminEmail = $a->email;
-					
+
 		// 			//If Monnify Is Active, Create Virtual Account For User
 		// 			if($monifyStatus == "On"){
 		// 				$this->createVirtualBankAccount($lastInsertId,$fname,$lname,$email,$monifyApi,$monifySecrete,$monifyContract);
 		// 			}
-					
+
 		// 			//Send Email To User
 		// 			$subject="Welcome (".$this->sitename.")";
 		// 			$message="Hi ".$fname.", "."Welcome to {$this->sitename}. At {$this->sitename}, you can access instant recharge of Airtime, Data Bundle, CableTv, Electricity Bill Payment and Airtime to Cash. More features such as buying and selling gift cards, wallet to wallet transfer, and wallet to bank transfer would be made available soon. Our customer support line is available to you 24/7. Stay connected.";
@@ -288,7 +300,7 @@
 
 		// 			$data =  ["status" => "success", "msg" => "Registartion Successfull"];
 
-		       		
+
 		//        } 
 		//        else{$data =  ["status" => "fail", "msg" => "Unexpected Error, Please Try Again Later"]; }
 
@@ -297,33 +309,36 @@
 		// }
 
 		//Login User Account
-		public function loginUser($phone,$key){
-			 
+		public function loginUser($phone, $key)
+		{
+
 			//Verify Registration Details
-			$dbh=$this->connect();
-			$hash=substr(sha1(md5($key)), 3, 10);
-	    	$c="SELECT sId,sFname,sLname,sEmail,sPass,sPhone,sState,sType,sRegStatus FROM subscribers WHERE sPhone=:ph AND sPass=:p";
-	    	$queryC = $dbh->prepare($c);
-	    	$queryC->bindParam(':ph',$phone,PDO::PARAM_STR);
-	     	$queryC->bindParam(':p',$hash,PDO::PARAM_STR);
-	     	$queryC->execute();
-	      	$result=$queryC->fetch(PDO::FETCH_OBJ);
-	      	if($queryC->rowCount() > 0){
+			$dbh = $this->connect();
+			$hash = substr(sha1(md5($key)), 3, 10);
+			$c = "SELECT sId,sFname,sLname,sEmail,sPass,sPhone,sState,sType,sRegStatus FROM subscribers WHERE sPhone=:ph AND sPass=:p";
+			$queryC = $dbh->prepare($c);
+			$queryC->bindParam(':ph', $phone, PDO::PARAM_STR);
+			$queryC->bindParam(':p', $hash, PDO::PARAM_STR);
+			$queryC->execute();
+			$result = $queryC->fetch(PDO::FETCH_OBJ);
+			if ($queryC->rowCount() > 0) {
 
-				if($result->sRegStatus == 1){return (object) ["status" => "fail", "msg" => "Account Blocked, Please Contact Customer Support For Additional Information"];}
-				
-	      		$_SESSION["loginId"]=$result->sId;
-		       	$_SESSION["loginName"]=$result->sFname . " " . $result->sLname;
-		       	$_SESSION["loginEmail"]=$result->sEmail;
-		       	$_SESSION["loginPhone"]=$result->sPhone;
-		       
+				if ($result->sRegStatus == 1) {
+					return (object) ["status" => "fail", "msg" => "Account Blocked, Please Contact Customer Support For Additional Information"];
+				}
 
-				$loginId=base64_encode($result->sId);
-				$loginState=base64_encode($result->sState);
-				$loginAccount=base64_encode($result->sType);
-				$loginPhone=base64_encode($result->sPhone);
-				$loginName=base64_encode($result->sFname);
-				
+				$_SESSION["loginId"] = $result->sId;
+				$_SESSION["loginName"] = $result->sFname . " " . $result->sLname;
+				$_SESSION["loginEmail"] = $result->sEmail;
+				$_SESSION["loginPhone"] = $result->sPhone;
+
+
+				$loginId = base64_encode($result->sId);
+				$loginState = base64_encode($result->sState);
+				$loginAccount = base64_encode($result->sType);
+				$loginPhone = base64_encode($result->sPhone);
+				$loginName = base64_encode($result->sFname);
+
 				setcookie("loginId", $loginId, time() + (2592000 * 30), "/");
 				setcookie("loginState", $loginState, time() + (2592000 * 30), "/");
 				setcookie("loginAccount", $loginAccount, time() + (2592000 * 30), "/");
@@ -332,67 +347,71 @@
 
 				//Generate User Login Token
 				$randomToken = substr(str_shuffle("ABCDEFGHIJklmnopqrstvwxyz"), 0, 10);
-				$userLoginToken = time() . $randomToken . mt_rand(100,1000);
+				$userLoginToken = time() . $randomToken . mt_rand(100, 1000);
 
 				//Set User Login Token
-				$_SESSION["loginAccToken"]=$userLoginToken;
+				$_SESSION["loginAccToken"] = $userLoginToken;
 
 				//Save New User Login Token For One Device Login Check
 
-				$sqlAc="INSERT INTO userlogin (user,token) VALUES (:user,:token)";
+				$sqlAc = "INSERT INTO userlogin (user,token) VALUES (:user,:token)";
 				$queryAc = $dbh->prepare($sqlAc);
-				$queryAc->bindParam(':user',$result->sId,PDO::PARAM_STR);
-				$queryAc->bindParam(':token',$userLoginToken,PDO::PARAM_STR);
+				$queryAc->bindParam(':user', $result->sId, PDO::PARAM_STR);
+				$queryAc->bindParam(':token', $userLoginToken, PDO::PARAM_STR);
 				$queryAc->execute();
 
 				//Login Notification
 
 				//Send Email To User
-				$subject="Login Notification (".$this->sitename.")";
-				$message="<h3><b>Welcome Back ".$result->sFname."! </h3></b> <br/><br/> ";
-				$message.= "You have successfully logged in to your {$this->sitename} account at ";
-				$message.= date("d M Y h:iA").". <br/><br/>";
-				$message.= "If you think this action is suspicious, please change your password immediadtely and reach out to our customer support team. <br/><br/>";
-				$message.= "<b>Why send this email?</b> We take security very seriously and we want to keep you in the loop of activities on your account.";
-				$check=self::sendMail($result->sEmail,$subject,$message);
+				$subject = "Login Notification (" . $this->sitename . ")";
+				$message = "<h3><b>Welcome Back " . $result->sFname . "! </h3></b> <br/><br/> ";
+				$message .= "You have successfully logged in to your {$this->sitename} account at ";
+				$message .= date("d M Y h:iA") . ". <br/><br/>";
+				$message .= "If you think this action is suspicious, please change your password immediadtely and reach out to our customer support team. <br/><br/>";
+				$message .= "<b>Why send this email?</b> We take security very seriously and we want to keep you in the loop of activities on your account.";
+				$check = self::sendMail($result->sEmail, $subject, $message);
 
-				
+
 				return (object) ["status" => "success", "msg" => "Login Successfull"];
+			} else {
+				return (object) ["status" => "fail", "msg" => "Invalid Username Or Password"];
+			}
+		}
 
-	      	}
-	      	else{return (object) ["status" => "fail", "msg" => "Invalid Username Or Password"];}
 
-	    }
-	      
-		
-	    //Login User Account
-		public function loginUserFingerPrint($phone,$key){
-			 
+		//Login User Account
+		public function loginUserFingerPrint($phone, $key)
+		{
+
 			//Verify Registration Details
-			$dbh=$this->connect();
-			$hash=substr(sha1(md5($key)), 3, 10);
-	    	$c="SELECT sId,sFname,sLname,sApiKey,sEmail,sPass,sPhone,sState,sType,sRegStatus FROM subscribers WHERE sPhone=:ph AND sPass=:p";
-	    	$queryC = $dbh->prepare($c);
-	    	$queryC->bindParam(':ph',$phone,PDO::PARAM_STR);
-	     	$queryC->bindParam(':p',$hash,PDO::PARAM_STR);
-	     	$queryC->execute();
-	      	$result=$queryC->fetch(PDO::FETCH_OBJ);
-	      	if($queryC->rowCount() > 0){
+			$dbh = $this->connect();
+			$hash = substr(sha1(md5($key)), 3, 10);
+			$c = "SELECT sId,sFname,sLname,sApiKey,sEmail,sPass,sPin,sPhone,sState,sType,sRegStatus FROM subscribers WHERE sPhone=:ph AND sPass=:p";
+			$queryC = $dbh->prepare($c);
+			$queryC->bindParam(':ph', $phone, PDO::PARAM_STR);
+			$queryC->bindParam(':p', $hash, PDO::PARAM_STR);
+			$queryC->execute();
+			$result = $queryC->fetch(PDO::FETCH_OBJ);
+			if ($queryC->rowCount() > 0) {
 
-				if($result->sRegStatus == 1){$response = array(); $response["status"] = 2; return $response;}
-				
-	      		$_SESSION["loginId"]=$result->sId;
-		       	$_SESSION["loginName"]=$result->sFname . " " . $result->sLname;
-		       	$_SESSION["loginEmail"]=$result->sEmail;
-		       	$_SESSION["loginPhone"]=$result->sPhone;
-		       
+				if ($result->sRegStatus == 1) {
+					$response = array();
+					$response["status"] = 2;
+					return $response;
+				}
 
-				$loginId=base64_encode($result->sId);
-				$loginState=base64_encode($result->sState);
-				$loginAccount=base64_encode($result->sType);
-				$loginPhone=base64_encode($result->sPhone);
-				$loginName=base64_encode($result->sFname);
-				
+				$_SESSION["loginId"] = $result->sId;
+				$_SESSION["loginName"] = $result->sFname . " " . $result->sLname;
+				$_SESSION["loginEmail"] = $result->sEmail;
+				$_SESSION["loginPhone"] = $result->sPhone;
+
+
+				$loginId = base64_encode($result->sId);
+				$loginState = base64_encode($result->sState);
+				$loginAccount = base64_encode($result->sType);
+				$loginPhone = base64_encode($result->sPhone);
+				$loginName = base64_encode($result->sFname);
+
 				setcookie("loginId", $loginId, time() + (2592000 * 30), "/");
 				setcookie("loginState", $loginState, time() + (2592000 * 30), "/");
 				setcookie("loginAccount", $loginAccount, time() + (2592000 * 30), "/");
@@ -401,108 +420,123 @@
 
 				//Generate User Login Token
 				$randomToken = substr(str_shuffle("ABCDEFGHIJklmnopqrstvwxyz"), 0, 10);
-				$userLoginToken = time() . $randomToken . mt_rand(100,1000);
+				$userLoginToken = time() . $randomToken . mt_rand(100, 1000);
 
 				//Set User Login Token
-				$_SESSION["loginAccToken"]=$userLoginToken;
+				$_SESSION["loginAccToken"] = $userLoginToken;
 
 				//Save New User Login Token For One Device Login Check
 
-				$sqlAc="INSERT INTO userlogin (user,token) VALUES (:user,:token)";
+				$sqlAc = "INSERT INTO userlogin (user,token) VALUES (:user,:token)";
 				$queryAc = $dbh->prepare($sqlAc);
-				$queryAc->bindParam(':user',$result->sId,PDO::PARAM_STR);
-				$queryAc->bindParam(':token',$userLoginToken,PDO::PARAM_STR);
+				$queryAc->bindParam(':user', $result->sId, PDO::PARAM_STR);
+				$queryAc->bindParam(':token', $userLoginToken, PDO::PARAM_STR);
 				$queryAc->execute();
-				
+
 				$response = array();
 				$response["status"] = 0;
-				$response["name"] = $result->sFname . " " . $result->sLname;
+				$response["fname"] = $result->sFname;
+				$response["lname"] = $result->sLname;
+				$response["email"] = $result->sEmail;
 				$response["phone"] = $result->sPhone;
+				$response["state"] = $result->sState;
 				$response["apiKey"] = $result->sApiKey;
 				$response["userId"] = $result->sId;
-				
-				return $response;
-	      	}
-	      	else{$response = array(); $response["status"] = 1; return $response;}
+				$response["pin"] = $result->sPin;
 
-	    }
-	    
+				return $response;
+			} else {
+				$response = array();
+				$response["status"] = 1;
+				return $response;
+			}
+		}
+
 		//Recover User Account
-		public function recoverUserLogin($email, $isApiRequest = false){
-			
+		public function recoverUserLogin($email, $isApiRequest = false)
+		{
 			//Verify Registration Details
-			$dbh=$this->connect();
-	    	$c="SELECT sId,sFname,sLname,sEmail,sPass FROM subscribers WHERE sEmail=:e";
-	    	$queryC = $dbh->prepare($c);
-	    	$queryC->bindParam(':e',$email,PDO::PARAM_STR);
-	     	$queryC->execute();
-	      	$result=$queryC->fetch(PDO::FETCH_OBJ);
-	      	if($queryC->rowCount() > 0){
-	      		
-	      		//Genereate And Update Verification Code
-	      		$varCode=mt_rand(2000,9000);
-	      		$stmt="UPDATE subscribers SET sVerCode=$varCode WHERE sId=$result->sId";
-		    	$query = $dbh->prepare($stmt);
-		    	$query->execute();
+			$dbh = $this->connect();
+			$c = "SELECT sId,sFname,sLname,sEmail,sPass FROM subscribers WHERE sEmail=:e";
+			$queryC = $dbh->prepare($c);
+			$queryC->bindParam(':e', $email, PDO::PARAM_STR);
+			$queryC->execute();
+			$result = $queryC->fetch(PDO::FETCH_OBJ);
+			if ($queryC->rowCount() > 0) {
+
+				//Genereate And Update Verification Code
+				$varCode = mt_rand(2000, 9000);
+				$stmt = "UPDATE subscribers SET sVerCode=$varCode WHERE sId=$result->sId";
+				$query = $dbh->prepare($stmt);
+				$query->execute();
 
 				if (!$isApiRequest) {
 					//Send Verification Code To User Email
-					$email=$result->sEmail;
-					$subject="Account Recovery (".$this->sitename.")";
-					$message="<h3>Hi ".$result->sFname.", You Recently Requested For A Password Recovery. Use The Verification Code \"".$varCode."\" To Recover Your Account. Thank You For Using ".$this->sitename.".</h3>";
-					$check=self::sendMail($email,$subject,$message);
-					if($check == 0){return 0;}
-					else{return 2;}
+					$email = $result->sEmail;
+					$subject = "Account Recovery (" . $this->sitename . ")";
+					$message = "<h3>Hi " . $result->sFname . ", You Recently Requested For A Password Recovery. Use The Verification Code \"" . $varCode . "\" To Recover Your Account. Thank You For Using " . $this->sitename . ".</h3>";
+					$check = self::sendMail($email, $subject, $message);
+					if ($check == 0) {
+						return 0;
+					} else {
+						return 3;
+					}
 				} else {
 					$response = array();
 					$response['status'] = 0;
 					$response['code'] = $varCode;
-                    return $response;
+					return $response;
 				}
+			} else {
+				return 1;
+			}
+		}
 
-	      	}
-	      	else{return 1;}
+		//Recover User Account
+		public function verifyRecoveryCode($email, $code)
+		{
 
-	    }
-
-	    //Recover User Account
-		public function verifyRecoveryCode($email,$code){
-			
 			//Verify Registration Details
-			$dbh=$this->connect();
-	    	$c="SELECT sId FROM subscribers WHERE sEmail=:e AND sVerCode=:c";
-	    	$queryC = $dbh->prepare($c);
-	    	$queryC->bindParam(':e',$email,PDO::PARAM_STR);
-	    	$queryC->bindParam(':c',$code,PDO::PARAM_STR);
-	     	$queryC->execute();
-	      	if($queryC->rowCount() > 0){return 0;}
-	      	else{return 1;}
-	    }
+			$dbh = $this->connect();
+			$c = "SELECT sId FROM subscribers WHERE sEmail=:e AND sVerCode=:c";
+			$queryC = $dbh->prepare($c);
+			$queryC->bindParam(':e', $email, PDO::PARAM_STR);
+			$queryC->bindParam(':c', $code, PDO::PARAM_STR);
+			$queryC->execute();
+			if ($queryC->rowCount() > 0) {
+				return 0;
+			} else {
+				return 1;
+			}
+		}
 
-	    //Recover Seller Account
-		public function updateUserKey($email,$code,$key){
-			
+		//Recover Seller Account
+		public function updateUserKey($email, $code, $key)
+		{
+
 			//Verify Registration Details
-			$dbh=$this->connect();
-			$hash=substr(sha1(md5($key)), 3, 10);
-			$verCode = mt_rand(1000,9999);
-	    	$c="UPDATE subscribers SET sPass=:k,sVerCode=:v WHERE sEmail=:e AND sVerCode=:c";
-	    	$queryC = $dbh->prepare($c);
-	    	$queryC->bindParam(':e',$email,PDO::PARAM_STR);
-	    	$queryC->bindParam(':c',$code,PDO::PARAM_STR);
-	    	$queryC->bindParam(':k',$hash,PDO::PARAM_STR);
-	    	$queryC->bindParam(':v',$verCode,PDO::PARAM_INT);
-	     	if($queryC->execute()){return 0;}
-	      	else{return 1;}
-
-	    }
+			$dbh = $this->connect();
+			$hash = substr(sha1(md5($key)), 3, 10);
+			$verCode = mt_rand(1000, 9999);
+			$c = "UPDATE subscribers SET sPass=:k,sVerCode=:v WHERE sEmail=:e AND sVerCode=:c";
+			$queryC = $dbh->prepare($c);
+			$queryC->bindParam(':e', $email, PDO::PARAM_STR);
+			$queryC->bindParam(':c', $code, PDO::PARAM_STR);
+			$queryC->bindParam(':k', $hash, PDO::PARAM_STR);
+			$queryC->bindParam(':v', $verCode, PDO::PARAM_INT);
+			if ($queryC->execute()) {
+				return 0;
+			} else {
+				return 1;
+			}
+		}
 
 		public function createVirtualBankAccount($id, $fname, $lname, $email, $monnifyApi, $monnifySecret, $monnifyContract)
 		{
 			$fullname = $fname . " " . $lname;
 			$accessKey = "$monnifyApi:$monnifySecret";
 			$apiKey = base64_encode($accessKey);
-			
+
 			// Get Authorization Data
 			$url = 'https://api.monnify.com/api/v1/auth/login';
 			$url2 = "https://api.monnify.com/api/v2/bank-transfer/reserved-accounts";
@@ -517,7 +551,7 @@
 					"Authorization: Basic {$apiKey}",
 				),
 			));
-			
+
 			$json = curl_exec($ch);
 			$result = json_decode($json);
 			curl_close($ch);
@@ -531,7 +565,7 @@
 			}
 
 			$ref = uniqid() . rand(1000, 9000);
-			
+
 			// Request Account Creation
 			$curl = curl_init();
 			curl_setopt_array($curl, array(
@@ -559,14 +593,19 @@
 					"Content-Type: application/json"
 				),
 			));
-			
+
 			$response = curl_exec($curl);
 			curl_close($curl);
 			$value = json_decode($response, true);
-			
+
 			// Check for requestSuccessful key and responseBody
 			if (isset($value["requestSuccessful"]) && $value["requestSuccessful"] == true) {
-				$wema = ""; $sterling = ""; $monipoint = ""; $fidelity = ""; $wema_name = ""; $ref = "";
+				$wema = "";
+				$sterling = "";
+				$monipoint = "";
+				$fidelity = "";
+				$wema_name = "";
+				$ref = "";
 
 				foreach ($value["responseBody"]["accounts"] as $account) {
 					$bankCode = $account["bankCode"];
@@ -612,11 +651,11 @@
 
 		// //Create Virtual Bank Account
 		// public function createVirtualBankAccount($id,$fname,$lname,$email,$monnifyApi,$monnifySecret,$monnifyContract){
-           
+
 		// 	$fullname = $fname." ".$lname;
 		// 	$accessKey = "$monnifyApi:$monnifySecret";
 		// 	$apiKey = base64_encode($accessKey);
-			
+
 		// 	//Get Authorization Data
 		// 	$url = 'https://api.monnify.com/api/v1/auth/login';
 		// 	//$url = "https://sandbox.monnify.com/api/v1/auth/login/";
@@ -633,18 +672,18 @@
 		// 			"Authorization: Basic {$apiKey}",
 		// 		),
 		// 	));
-			
-			
+
+
 		// 	$json = curl_exec($ch);
 		// 	$result = json_decode($json);
 		// 	curl_close($ch);
 
 		// 	$accessToken=$result->responseBody->accessToken;
 		// 	$ref=uniqid().rand(1000, 9000);
-	
+
 		// 	//Request Account Creation
 		// 	$curl = curl_init();
-	
+
 		// 	curl_setopt_array($curl, array(
 		// 		CURLOPT_URL =>  $url2,
 		// 		CURLOPT_RETURNTRANSFER => true,
@@ -665,28 +704,28 @@
 		// 									"customerName": "'.$fullname.'",
 		// 									"getAllAvailableBanks": false,
 		// 									"preferredBanks": ["50515","232","070","035"]
-										
+
 		// 							}',
 		// 		CURLOPT_HTTPHEADER => array(
 		// 			"Authorization: Bearer ".$accessToken,
 		// 			"Content-Type: application/json"
 		// 		),
 		// 	));
-	
+
 		// 	$response = curl_exec($curl);
 		// 	curl_close($curl);
 		// 	$value = json_decode($response, true);
-	
+
 		// 	//Check And Save Account Details
 		// 	if($value["requestSuccessful"] == true){
 		// 		// $account_name  = $value["responseBody"]["accountName"];
 		// 		$wema=""; $sterling=""; $monipoint=""; $fidelity=""; $wema_name=""; $ref="";
-	
+
 		// 	foreach ($value["responseBody"]["accounts"] as $account) {
 		// 		$bankCode = $account["bankCode"];
 		// 		$accountNumber = $account["accountNumber"];
 		// 		$bankName = $account["bankName"];
-	
+
 		// 		switch ($bankCode) {
 		// 			case "50515":
 		// 				$monipoint = $accountNumber;
@@ -706,11 +745,11 @@
 		// 	if (!empty($value["responseBody"]["accountReference"])) {
 		// 		$ref = $value["responseBody"]["accountReference"];
 		// 	}	
-	
-				
-				
+
+
+
 		// 		//Save Account Number
-	
+
 		// 		$dbh=self::connect();
 		// 				$c="UPDATE subscribers SET sRolexBank=:rb,sSterlingBank=:sb,sBankNo=:wb,sBankName=:bn,sFidelityBank=:fb,sAccountref=:ar WHERE sId=$id";
 		// 				$queryC = $dbh->prepare($c);
@@ -725,113 +764,117 @@
 		// }
 
 		//Verify Vitual Bank Account
-	public function bvnVerification($id,$sAccountref,$bvn,$monnifyApi,$monnifySecret){
-		
-		$accessKey = "$monnifyApi:$monnifySecret";
-		$apiKey = base64_encode($accessKey);
-		$accountReference = $sAccountref;
+		public function bvnVerification($id, $sAccountref, $bvn, $monnifyApi, $monnifySecret)
+		{
 
-		//Get Authorization Data
-		$url = 'https://api.monnify.com/api/v1/auth/login';
-		//$url = "https://sandbox.monnify.com/api/v1/auth/login/";
-		$url2 = 'https://api.monnify.com/api/v1/bank-transfer/reserved-accounts/' . $accountReference . '/kyc-info';
-		//$url3 = 'https://api.monnify.com/api/v1/bank-transfer/reserved-accounts/' . $accountReference . '/kyc-info';
-		$ch = curl_init();
-		curl_setopt_array($ch, array(
-			CURLOPT_URL => $url,
-			CURLOPT_RETURNTRANSFER => true,
-			CURLOPT_TIMEOUT => 0,
-			CURLOPT_FOLLOWLOCATION => true,
-			CURLOPT_CUSTOMREQUEST => 'POST',
-			CURLOPT_HTTPHEADER => array(
-				"Authorization: Basic {$apiKey}",
-			),
-		));
-		
-		
-		$json = curl_exec($ch);
-		$result = json_decode($json);
-		curl_close($ch);
+			$accessKey = "$monnifyApi:$monnifySecret";
+			$apiKey = base64_encode($accessKey);
+			$accountReference = $sAccountref;
 
-		$accessToken=$result->responseBody->accessToken;
+			//Get Authorization Data
+			$url = 'https://api.monnify.com/api/v1/auth/login';
+			//$url = "https://sandbox.monnify.com/api/v1/auth/login/";
+			$url2 = 'https://api.monnify.com/api/v1/bank-transfer/reserved-accounts/' . $accountReference . '/kyc-info';
+			//$url3 = 'https://api.monnify.com/api/v1/bank-transfer/reserved-accounts/' . $accountReference . '/kyc-info';
+			$ch = curl_init();
+			curl_setopt_array($ch, array(
+				CURLOPT_URL => $url,
+				CURLOPT_RETURNTRANSFER => true,
+				CURLOPT_TIMEOUT => 0,
+				CURLOPT_FOLLOWLOCATION => true,
+				CURLOPT_CUSTOMREQUEST => 'POST',
+				CURLOPT_HTTPHEADER => array(
+					"Authorization: Basic {$apiKey}",
+				),
+			));
 
-		//Update Monnify KYC VErification
-		$curl = curl_init();
+
+			$json = curl_exec($ch);
+			$result = json_decode($json);
+			curl_close($ch);
+
+			$accessToken = $result->responseBody->accessToken;
+
+			//Update Monnify KYC VErification
+			$curl = curl_init();
 
 			curl_setopt_array($curl, array(
-			CURLOPT_URL => $url2,
-			CURLOPT_RETURNTRANSFER => true,
-			CURLOPT_ENCODING => '',
-			CURLOPT_MAXREDIRS => 10,
-			CURLOPT_TIMEOUT => 0,
-			CURLOPT_FOLLOWLOCATION => true,
-			CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-			CURLOPT_CUSTOMREQUEST => 'PUT',
-			CURLOPT_POSTFIELDS =>'{
-				"bvn":"'.$bvn.'"
+				CURLOPT_URL => $url2,
+				CURLOPT_RETURNTRANSFER => true,
+				CURLOPT_ENCODING => '',
+				CURLOPT_MAXREDIRS => 10,
+				CURLOPT_TIMEOUT => 0,
+				CURLOPT_FOLLOWLOCATION => true,
+				CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+				CURLOPT_CUSTOMREQUEST => 'PUT',
+				CURLOPT_POSTFIELDS => '{
+				"bvn":"' . $bvn . '"
 			}',
-			CURLOPT_HTTPHEADER => array(
-				"Authorization: Bearer ".$accessToken,
-				"Content-Type: application/json"
-			),
-		));
+				CURLOPT_HTTPHEADER => array(
+					"Authorization: Bearer " . $accessToken,
+					"Content-Type: application/json"
+				),
+			));
 
-		$response = curl_exec($curl);
-		curl_close($curl);
-		$value = json_decode($response, true);
-		// echo $response;
+			$response = curl_exec($curl);
+			curl_close($curl);
+			$value = json_decode($response, true);
+			// echo $response;
 
-		// Check if Monnify request was successful
-		if ($value["requestSuccessful"] == true) {
-			// Check if the BVN verification is successful
-			if (isset($value["responseBody"]["bvn"]) && !empty($value["responseBody"]["bvn"])) {
-				// BVN is valid, update the database
-				$pverified = $value["responseBody"]["bvn"];;
-				$verified = base64_encode($pverified);
-	
-				// Update the database with the verified BVN
-				$dbh = self::connect();
-				$c = "UPDATE subscribers SET sVerified=:bv WHERE sId=$id";
-				$queryC = $dbh->prepare($c);
-				$queryC->bindParam(':bv', $verified, PDO::PARAM_STR);
-				$queryC->execute();
-	
-				// Return 0 for success
-				return 0;
+			// Check if Monnify request was successful
+			if ($value["requestSuccessful"] == true) {
+				// Check if the BVN verification is successful
+				if (isset($value["responseBody"]["bvn"]) && !empty($value["responseBody"]["bvn"])) {
+					// BVN is valid, update the database
+					$pverified = $value["responseBody"]["bvn"];;
+					$verified = base64_encode($pverified);
+
+					// Update the database with the verified BVN
+					$dbh = self::connect();
+					$c = "UPDATE subscribers SET sVerified=:bv WHERE sId=$id";
+					$queryC = $dbh->prepare($c);
+					$queryC->bindParam(':bv', $verified, PDO::PARAM_STR);
+					$queryC->execute();
+
+					// Return 0 for success
+					return 0;
+				} else {
+					// BVN is not valid, respond with error, return 1
+					return 1;
+				}
 			} else {
-				// BVN is not valid, respond with error, return 1
-				return 1;
+				// Request to Monnify failed, respond with error, return 2
+				return 2;
 			}
-		} else {
-			// Request to Monnify failed, respond with error, return 2
-			return 2;
 		}
-	}
 
 		//Create Payvessel Virtual Bank Account
-		public function generatePayvesselAccount($id,$fname,$lname,$phone,$email){
-           
+		public function generatePayvesselAccount($id, $fname, $lname, $phone, $email)
+		{
+
 			//Get Authorization Data
 			$url = 'https://api.payvessel.com/api/external/request/customerReservedAccount/';
-			
-			$dbh=$this->connect();
-            
-            //Get API Details
-			$d=$this->getApiConfiguration();
-			$payvesselStatus = $this->getConfigValue($d,"payvesselStatus");
-			$payvesselApiKey = $this->getConfigValue($d,"payvesselApiKey");
-			$payvesselSecret = $this->getConfigValue($d,"payvesselSecret");
-			$payvesselBusinessId = $this->getConfigValue($d,"payvesselBusinessId");
-			
-			$fname=str_replace(" ","",$fname); $fname=trim($fname);
-			$lname=str_replace(" ","",$lname); $lname=trim($lname);
-            $phone=trim($phone);
-            $email=str_replace(" ","",$email);
-		
+
+			$dbh = $this->connect();
+
+			//Get API Details
+			$d = $this->getApiConfiguration();
+			$payvesselStatus = $this->getConfigValue($d, "payvesselStatus");
+			$payvesselApiKey = $this->getConfigValue($d, "payvesselApiKey");
+			$payvesselSecret = $this->getConfigValue($d, "payvesselSecret");
+			$payvesselBusinessId = $this->getConfigValue($d, "payvesselBusinessId");
+
+			$fname = str_replace(" ", "", $fname);
+			$fname = trim($fname);
+			$lname = str_replace(" ", "", $lname);
+			$lname = trim($lname);
+			$phone = trim($phone);
+			$email = str_replace(" ", "", $email);
+
 			//Get Token
-			
+
 			$ch = curl_init();
-		    curl_setopt_array($ch, array(
+			curl_setopt_array($ch, array(
 				CURLOPT_URL => $url,
 				CURLOPT_RETURNTRANSFER => true,
 				CURLOPT_ENCODING => "",
@@ -840,176 +883,177 @@
 				CURLOPT_FOLLOWLOCATION => true,
 				CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
 				CURLOPT_CUSTOMREQUEST => "POST",
-				CURLOPT_POSTFIELDS =>'{
-                        "email":"'.$email.'",
-                        "name":"'.$fname.' '.$lname.'",
-                        "phoneNumber":"'.$phone.'",
+				CURLOPT_POSTFIELDS => '{
+                        "email":"' . $email . '",
+                        "name":"' . $fname . ' ' . $lname . '",
+                        "phoneNumber":"' . $phone . '",
                         "bankcode":["120001"],
-                        "businessid":"'.$payvesselBusinessId.'"
+                        "businessid":"' . $payvesselBusinessId . '"
                     
                     }',
 				CURLOPT_HTTPHEADER => array(
-                        "api-key:$payvesselApiKey",
-                        "api-secret:Bearer $payvesselSecret",
-                        "Content-Type:application/json"
-                ),
+					"api-key:$payvesselApiKey",
+					"api-secret:Bearer $payvesselSecret",
+					"Content-Type:application/json"
+				),
 			));
-			
-			
+
+
 			$result = curl_exec($ch);
 			curl_close($ch);
 			$value = json_decode($result);
-			
-			file_put_contents("payversal_log.txt",$result);
-			
+
+			file_put_contents("payversal_log.txt", $result);
+
 			//Check And Save Account Details
-			if(isset($value->banks[0]->accountNumber)){
+			if (isset($value->banks[0]->accountNumber)) {
 				$accountNumber = $value->banks[0]->accountNumber;
-                
+
 				//Save Account Number
-				
-				$dbh=$this->connect();
-				$c="UPDATE subscribers SET sPayvesselBank=:pb WHERE sId=$id";
+
+				$dbh = $this->connect();
+				$c = "UPDATE subscribers SET sPayvesselBank=:pb WHERE sId=$id";
 				$queryC = $dbh->prepare($c);
-				$queryC->bindParam(':pb',$accountNumber,PDO::PARAM_STR);
+				$queryC->bindParam(':pb', $accountNumber, PDO::PARAM_STR);
 				$queryC->execute();
 			}
 		}
 
-		
+
 		//GET LIST Of BANKS
-		public function getFullBankList(){
-		    
-		    //Get API Details
-			$d=$this->getApiConfiguration();
-			$a=$this->getSiteConfiguration();
-			$monifyStatus = $this->getConfigValue($d,"monifyStatus");
-			$monifyApi = $this->getConfigValue($d,"monifyApi");
-			$monifySecrete = $this->getConfigValue($d,"monifySecrete");
-			$monifyContract = $this->getConfigValue($d,"monifyContract");
+		public function getFullBankList()
+		{
+
+			//Get API Details
+			$d = $this->getApiConfiguration();
+			$a = $this->getSiteConfiguration();
+			$monifyStatus = $this->getConfigValue($d, "monifyStatus");
+			$monifyApi = $this->getConfigValue($d, "monifyApi");
+			$monifySecrete = $this->getConfigValue($d, "monifySecrete");
+			$monifyContract = $this->getConfigValue($d, "monifyContract");
 			$adminEmail = $a->email;
-           
-			$accessKey = $monifyApi.":".$monifySecrete;
+
+			$accessKey = $monifyApi . ":" . $monifySecrete;
 			$apiKey = base64_encode($accessKey);
-			
+
 			//Get Authorization Data
 			$url = 'https://api.monnify.com/api/v1/auth/login';
 			$ch = curl_init();
-		    curl_setopt_array($ch, array(
+			curl_setopt_array($ch, array(
 				CURLOPT_URL => $url,
 				CURLOPT_RETURNTRANSFER => true,
 				CURLOPT_TIMEOUT => 0,
 				CURLOPT_FOLLOWLOCATION => true,
 				CURLOPT_CUSTOMREQUEST => 'POST',
 				CURLOPT_HTTPHEADER => array(
-                    "Authorization: Basic {$apiKey}",
-                    "Content-Type: application/json"
-                ),
+					"Authorization: Basic {$apiKey}",
+					"Content-Type: application/json"
+				),
 			));
-			
-			
+
+
 			$json = curl_exec($ch);
 			$result = json_decode($json);
 			curl_close($ch);
-            
-			$accessToken=$result->responseBody->accessToken;
-			
+
+			$accessToken = $result->responseBody->accessToken;
+
 			//Get Authorization Data
 			$url2 = 'https://api.monnify.com/api/v1/banks';
 			$ch2 = curl_init();
-		    curl_setopt_array($ch2, array(
+			curl_setopt_array($ch2, array(
 				CURLOPT_URL => $url2,
 				CURLOPT_RETURNTRANSFER => true,
 				CURLOPT_TIMEOUT => 0,
 				CURLOPT_FOLLOWLOCATION => true,
 				CURLOPT_CUSTOMREQUEST => 'GET',
 				CURLOPT_HTTPHEADER => array(
-                    "Authorization: Bearer {$accessToken}",
-                    "Content-Type: application/json"
-                ),
+					"Authorization: Bearer {$accessToken}",
+					"Content-Type: application/json"
+				),
 			));
-			
-			
+
+
 			$json2 = curl_exec($ch2);
 			$result2 = json_decode($json2);
 			curl_close($ch2);
-            
+
 			return $result2;
-			
 		}
-		
+
 		//Verify Bank Account Details
-		public function verifyBankAccount($bankcode,$accountno){
-		    
-		    //Get API Details
-			$d=$this->getApiConfiguration();
-			$a=$this->getSiteConfiguration();
-			$monifyStatus = $this->getConfigValue($d,"monifyStatus");
-			$monifyApi = $this->getConfigValue($d,"monifyApi");
-			$monifySecrete = $this->getConfigValue($d,"monifySecrete");
-			$monifyContract = $this->getConfigValue($d,"monifyContract");
+		public function verifyBankAccount($bankcode, $accountno)
+		{
+
+			//Get API Details
+			$d = $this->getApiConfiguration();
+			$a = $this->getSiteConfiguration();
+			$monifyStatus = $this->getConfigValue($d, "monifyStatus");
+			$monifyApi = $this->getConfigValue($d, "monifyApi");
+			$monifySecrete = $this->getConfigValue($d, "monifySecrete");
+			$monifyContract = $this->getConfigValue($d, "monifyContract");
 			$adminEmail = $a->email;
-           
-			$accessKey = $monifyApi.":".$monifySecrete;
+
+			$accessKey = $monifyApi . ":" . $monifySecrete;
 			$apiKey = base64_encode($accessKey);
-			
+
 			//Get Authorization Data
 			$url = 'https://api.monnify.com/api/v1/auth/login';
 			$ch = curl_init();
-		    curl_setopt_array($ch, array(
+			curl_setopt_array($ch, array(
 				CURLOPT_URL => $url,
 				CURLOPT_RETURNTRANSFER => true,
 				CURLOPT_TIMEOUT => 0,
 				CURLOPT_FOLLOWLOCATION => true,
 				CURLOPT_CUSTOMREQUEST => 'POST',
 				CURLOPT_HTTPHEADER => array(
-                    "Authorization: Basic {$apiKey}",
-                    "Content-Type: application/json"
-                ),
+					"Authorization: Basic {$apiKey}",
+					"Content-Type: application/json"
+				),
 			));
-			
-			
+
+
 			$json = curl_exec($ch);
 			$result = json_decode($json);
 			curl_close($ch);
-            
-			$accessToken=$result->responseBody->accessToken;
-			
+
+			$accessToken = $result->responseBody->accessToken;
+
 			//Get Authorization Data
-			$url2 = 'https://api.monnify.com/api/v1/disbursements/account/validate?accountNumber='.$accountno.'&bankCode='.$bankcode;
+			$url2 = 'https://api.monnify.com/api/v1/disbursements/account/validate?accountNumber=' . $accountno . '&bankCode=' . $bankcode;
 			$ch2 = curl_init();
-		    curl_setopt_array($ch2, array(
+			curl_setopt_array($ch2, array(
 				CURLOPT_URL => $url2,
 				CURLOPT_RETURNTRANSFER => true,
 				CURLOPT_TIMEOUT => 0,
 				CURLOPT_FOLLOWLOCATION => true,
 				CURLOPT_CUSTOMREQUEST => 'GET',
 				CURLOPT_HTTPHEADER => array(
-                    "Authorization: Bearer {$accessToken}",
-                    "Content-Type: application/json"
-                ),
+					"Authorization: Bearer {$accessToken}",
+					"Content-Type: application/json"
+				),
 			));
-			
-			
+
+
 			$json2 = curl_exec($ch2);
 			$result2 = json_decode($json2);
 			curl_close($ch2);
-            
+
 			return $result2;
-			
 		}
 
-	    //Create Kuda Virtual Bank Account
-		public function generateKudaAccount($id,$fname,$lname,$phone,$email,$kudaApi,$kudaEmail){
-           
+		//Create Kuda Virtual Bank Account
+		public function generateKudaAccount($id, $fname, $lname, $phone, $email, $kudaApi, $kudaEmail)
+		{
+
 			//Get Authorization Data
 			$url = 'https://kuda-openapi.kuda.com/v2.1/Account/GetToken/';
 			$url2 = "https://kuda-openapi.kuda.com/v2.1/";
-			
+
 			//Get Token
-			
+
 			$ch = curl_init();
-		    curl_setopt_array($ch, array(
+			curl_setopt_array($ch, array(
 				CURLOPT_URL => $url,
 				CURLOPT_RETURNTRANSFER => true,
 				CURLOPT_ENCODING => "",
@@ -1018,31 +1062,40 @@
 				CURLOPT_FOLLOWLOCATION => true,
 				CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
 				CURLOPT_CUSTOMREQUEST => "POST",
-				CURLOPT_POSTFIELDS =>'{
-											"email": "'.$kudaEmail.'",
-											"apiKey": "'.$kudaApi.'"
+				CURLOPT_POSTFIELDS => '{
+											"email": "' . $kudaEmail . '",
+											"apiKey": "' . $kudaApi . '"
 									}',
 				CURLOPT_HTTPHEADER => array(
-                    "Content-Type: application/json",
-                ),
+					"Content-Type: application/json",
+				),
 			));
-			
-			
+
+
 			$result = curl_exec($ch);
 			curl_close($ch);
-			
-			
-            
-			$accessToken=$result;
-			$ref="REQ_".uniqid().rand(1000, 9000);
+
+
+
+			$accessToken = $result;
+			$ref = "REQ_" . uniqid() . rand(1000, 9000);
 
 			//Check Is User Have Middle Name
-            $secondname= explode(" ",$lname);
-            
-            if(isset($secondname[0])): $lname = $secondname[0]; endif;
-            if(isset($secondname[1])): $mname = $secondname[1]; else: $mname =""; endif;
-            $fname=str_replace(" ","",$fname); $lname=str_replace(" ","",$lname); $mname=str_replace(" ","",$mname);
-            $fname=trim($fname); $lname=trim($lname); $mname=trim($mname); $phone=trim($phone); $email=str_replace(" ","",$email);
+			$secondname = explode(" ", $lname);
+
+			if (isset($secondname[0])): $lname = $secondname[0];
+			endif;
+			if (isset($secondname[1])): $mname = $secondname[1];
+			else: $mname = "";
+			endif;
+			$fname = str_replace(" ", "", $fname);
+			$lname = str_replace(" ", "", $lname);
+			$mname = str_replace(" ", "", $mname);
+			$fname = trim($fname);
+			$lname = trim($lname);
+			$mname = trim($mname);
+			$phone = trim($phone);
+			$email = str_replace(" ", "", $email);
 
 			//Request Account Creation
 			$curl = curl_init();
@@ -1056,24 +1109,24 @@
 				CURLOPT_FOLLOWLOCATION => true,
 				CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
 				CURLOPT_CUSTOMREQUEST => "POST",
-				CURLOPT_POSTFIELDS => 
-									'{
+				CURLOPT_POSTFIELDS =>
+				'{
                                     		"ServiceType":"ADMIN_CREATE_VIRTUAL_ACCOUNT",
-                                    		"RequestRef":"'.$ref.'",
+                                    		"RequestRef":"' . $ref . '",
                                     		"Data":
                                     			{
-                                    				"email": "'.$email.'",
-                                    				"phoneNumber": "'.$phone.'",
-                                    				"lastName": "'.$lname.'",
-                                    				"firstName": "'.$fname.'",
-                                    				"middleName": "'.$mname.'",
+                                    				"email": "' . $email . '",
+                                    				"phoneNumber": "' . $phone . '",
+                                    				"lastName": "' . $lname . '",
+                                    				"firstName": "' . $fname . '",
+                                    				"middleName": "' . $mname . '",
                                                     "businessName": "",
-                                    				"trackingReference": "'.$email.'"
+                                    				"trackingReference": "' . $email . '"
                                     			}
                                     }
                                 ',
 				CURLOPT_HTTPHEADER => array(
-					"Authorization: Bearer ".$accessToken,
+					"Authorization: Bearer " . $accessToken,
 					"Content-Type: application/json"
 				),
 			));
@@ -1081,41 +1134,42 @@
 			$response = curl_exec($curl);
 			curl_close($curl);
 			$value = json_decode($response);
-			
+
 
 			//Check And Save Account Details
-			if(isset($value->data->accountNumber)){
+			if (isset($value->data->accountNumber)) {
 				$accountNumber = $value->data->accountNumber;
-                
+
 				//Save Account Number
-				
-				$dbh=$this->connect();
-				$c="UPDATE subscribers SET sKudaBank=:kb WHERE sId=$id";
+
+				$dbh = $this->connect();
+				$c = "UPDATE subscribers SET sKudaBank=:kb WHERE sId=$id";
 				$queryC = $dbh->prepare($c);
-				$queryC->bindParam(':kb',$accountNumber,PDO::PARAM_STR);
+				$queryC->bindParam(':kb', $accountNumber, PDO::PARAM_STR);
 				$queryC->execute();
 			}
 		}
 
 		//Complete Kuda Funding And Withdraw Funds From Virtual Account To Main Admin Wallet
-		public function completeKudaFundingByWithdrawal($amount,$useremail){
-           
-            $dbh=$this->connect();
-            
-            //Get API Details
-			$d=$this->getApiConfiguration();
-			$kudaStatus = $this->getConfigValue($d,"kudaStatus");
-			$kudaEmail = $this->getConfigValue($d,"kudaEmail");
-			$kudaApi = $this->getConfigValue($d,"kudaApi");
-					
+		public function completeKudaFundingByWithdrawal($amount, $useremail)
+		{
+
+			$dbh = $this->connect();
+
+			//Get API Details
+			$d = $this->getApiConfiguration();
+			$kudaStatus = $this->getConfigValue($d, "kudaStatus");
+			$kudaEmail = $this->getConfigValue($d, "kudaEmail");
+			$kudaApi = $this->getConfigValue($d, "kudaApi");
+
 			//Get Authorization Data
 			$url = 'https://kuda-openapi.kuda.com/v2.1/Account/GetToken/';
 			$url2 = "https://kuda-openapi.kuda.com/v2.1/";
-			
+
 			//Get Token
-			
+
 			$ch = curl_init();
-		    curl_setopt_array($ch, array(
+			curl_setopt_array($ch, array(
 				CURLOPT_URL => $url,
 				CURLOPT_RETURNTRANSFER => true,
 				CURLOPT_ENCODING => "",
@@ -1124,23 +1178,23 @@
 				CURLOPT_FOLLOWLOCATION => true,
 				CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
 				CURLOPT_CUSTOMREQUEST => "POST",
-				CURLOPT_POSTFIELDS =>'{
-											"email": "'.$kudaEmail.'",
-											"apiKey": "'.$kudaApi.'"
+				CURLOPT_POSTFIELDS => '{
+											"email": "' . $kudaEmail . '",
+											"apiKey": "' . $kudaApi . '"
 									}',
 				CURLOPT_HTTPHEADER => array(
-                    "Content-Type: application/json",
-                ),
+					"Content-Type: application/json",
+				),
 			));
-			
-			
+
+
 			$result = curl_exec($ch);
 			curl_close($ch);
-			
-			
-            
-			$accessToken=$result;
-			$ref="REQ_".uniqid().rand(1000, 9000);
+
+
+
+			$accessToken = $result;
+			$ref = "REQ_" . uniqid() . rand(1000, 9000);
 
 			//Request Account Creation
 			$curl = curl_init();
@@ -1154,21 +1208,21 @@
 				CURLOPT_FOLLOWLOCATION => true,
 				CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
 				CURLOPT_CUSTOMREQUEST => "POST",
-				CURLOPT_POSTFIELDS => 
-									'{
+				CURLOPT_POSTFIELDS =>
+				'{
                                     		"ServiceType":"WITHDRAW_VIRTUAL_ACCOUNT",
-                                    		"RequestRef":"'.$ref.'",
+                                    		"RequestRef":"' . $ref . '",
                                     		"Data":
                                     			{
-                                    				"trackingReference": "'.$useremail.'",
-                                    				"amount": "'.$amount.'",
+                                    				"trackingReference": "' . $useremail . '",
+                                    				"amount": "' . $amount . '",
                                     				"narration": "Virtual Account Withdrawal",
                                     				"ClientFeeCharge": 0
                                     			}
                                     }
                                 ',
 				CURLOPT_HTTPHEADER => array(
-					"Authorization: Bearer ".$accessToken,
+					"Authorization: Bearer " . $accessToken,
 					"Content-Type: application/json"
 				),
 			));
@@ -1176,12 +1230,9 @@
 			$response = curl_exec($curl);
 			curl_close($curl);
 			$value = json_decode($response);
-			
+
 			return $value;
 		}
-	    
-	      	
-
 	}
 
-?>
+	?>

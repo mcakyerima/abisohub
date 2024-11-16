@@ -1,6 +1,8 @@
 <?php
 // import autoloader.php from the parent directory
 require_once("../../autoloader.php");
+// echo "Autoloader included successfully.";
+
 
 // allowed Headers
 header("Access-Control-Allow-Origin: *");
@@ -11,13 +13,15 @@ header("Access-Control-Allow-Headers: X-API-KEY, Origin, X-Requested-With, Conte
 
 $headers = apache_request_headers();
 $response = array();
-$controller = new ApiAccess;
+$controller = new AccountAccess;
 
 date_default_timezone_set('Africa/Lagos');
+
 
 // -------------------------------------------------------------------
 //  Check Request Method
 // -------------------------------------------------------------------
+
 $requestMethod = $_SERVER["REQUEST_METHOD"];
 if ($requestMethod !== 'GET') {
     header('HTTP/1.0 400 Bad Request');
@@ -30,6 +34,7 @@ if ($requestMethod !== 'GET') {
 // -------------------------------------------------------------------
 //  Check For Api Authorization
 // -------------------------------------------------------------------
+
 if ((isset($headers['Authorization']) || isset($headers['authorization'])) || (isset($headers['Token']) || isset($headers['token']))) {
 
     if ((isset($headers['Authorization']) || isset($headers['authorization']))) {
@@ -40,7 +45,8 @@ if ((isset($headers['Authorization']) || isset($headers['authorization'])) || (i
         $token = trim(str_replace("Token", "", (isset($headers['Token'])) ? $headers['Token'] : $headers['token']));
     }
 
-    if ($token !== date("Ymd")) {
+
+    if ($token <> date("Ymd")) {
         header('HTTP/1.0 401 Unauthorized');
         $response["status"] = "fail";
         $response["msg"] = "Authorization token not found $token";
@@ -58,19 +64,29 @@ if ((isset($headers['Authorization']) || isset($headers['authorization'])) || (i
 // -------------------------------------------------------------------
 //  Get The Request Details
 // -------------------------------------------------------------------
-// Get the requested URI
-$uri = $_SERVER['REQUEST_URI'];
 
-// Split the URI into segments
-$uriSegments = explode('/', trim($uri, '/'));
+$input = @file_get_contents("php://input");
+//decode the json file
+$body = json_decode($input, true);
 
-// Check if an ID is provided in the URL
-$id = isset($uriSegments[4]) ? (int) $uriSegments[4] : null;
+// Check if decoding was successfull
+if ($body == nulL && json_last_error() !== JSON_ERROR_NONE) {
+    header("HTTP/1.0 400 Bad Request");
+    $response["status"] = "fail";
+    $response["msg"] = "Invalid JSON payload";
+    echo json_encode($response);
+    exit();
+}
 
-$result = $controller->getElectricPlans($id);
+$_POST = $body;
 
-// Send JSON response
+$email = (isset($body->email)) ? $body->email : '';
+
+$isApiRequest = (isset($body->isApiRequest)) ? $body->isApiRequest : "";
+
+$email = $controller->cleanParameter($email, "EMAIL");
+
+$check = $controller->recoverUserLogin($email, $isApiRequest);
 header('Content-Type: application/json');
-// $result["url"] = $uriSegments;
-echo json_encode($result);
+echo json_encode($check);
 exit();

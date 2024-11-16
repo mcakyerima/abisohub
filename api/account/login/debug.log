@@ -1,0 +1,509 @@
+Request Method: GET
+Headers: Array
+(
+    [Host] => localhost
+    [Connection] => Upgrade, HTTP2-Settings
+    [Upgrade] => h2c
+    [HTTP2-Settings] => AAMAAABkAAQCAAAAAAIAAAAA
+    [Cookie] => loginAccount=Mw%3D%3D; loginPhone=MDgwMjIyNDgwMDY%3D; loginState=Qm9ybm8%3D; loginName=VW1hcg%3D%3D; loginId=OQ%3D%3D
+    [Content-Type] => application/json
+    [User-Agent] => insomnia/10.1.1
+    [Token] => 20241115
+    [Accept] => */*
+)
+Request Method: POST
+Headers: Array
+(
+    [Host] => localhost
+    [Connection] => Upgrade, HTTP2-Settings
+    [Upgrade] => h2c
+    [HTTP2-Settings] => AAMAAABkAAQCAAAAAAIAAAAA
+    [Cookie] => loginAccount=Mw%3D%3D; loginPhone=MDgwMjIyNDgwMDY%3D; loginState=Qm9ybm8%3D; loginName=VW1hcg%3D%3D; loginId=OQ%3D%3D
+    [Content-Type] => application/json
+    [User-Agent] => insomnia/10.1.1
+    [Token] => 20241115
+    [Accept] => */*
+    [Content-Length] => 55
+)
+Request Method: POST
+Headers: Array
+(
+    [Host] => localhost
+    [Connection] => Upgrade, HTTP2-Settings
+    [Upgrade] => h2c
+    [HTTP2-Settings] => AAMAAABkAAQCAAAAAAIAAAAA
+    [Cookie] => loginAccount=Mw%3D%3D; loginPhone=MDgwMjIyNDgwMDY%3D; loginState=Qm9ybm8%3D; loginName=VW1hcg%3D%3D; loginId=OQ%3D%3D
+    [Content-Type] => application/json
+    [User-Agent] => insomnia/10.1.1
+    [Token] => 20241115
+    [Accept] => */*
+    [Content-Length] => 55
+)
+
+Body: {
+ "phone": "08022248006",
+	"accesspass": "abiso1122"
+}
+--------------------------------------------------------------------------------
+Request Method: POST
+Headers: Array
+(
+    [Host] => localhost
+    [Connection] => Upgrade, HTTP2-Settings
+    [Upgrade] => h2c
+    [HTTP2-Settings] => AAMAAABkAAQCAAAAAAIAAAAA
+    [Cookie] => loginAccount=Mw%3D%3D; loginPhone=MDgwMjIyNDgwMDY%3D; loginState=Qm9ybm8%3D; loginName=VW1hcg%3D%3D; loginId=OQ%3D%3D
+    [Content-Type] => application/json
+    [User-Agent] => insomnia/10.1.1
+    [Token] => 20241115
+    [Accept] => */*
+    [Content-Length] => 55
+)
+Request Method: POST
+Headers: Array
+(
+    [Host] => localhost
+    [Connection] => Upgrade, HTTP2-Settings
+    [Upgrade] => h2c
+    [HTTP2-Settings] => AAMAAABkAAQCAAAAAAIAAAAA
+    [Cookie] => loginAccount=Mw%3D%3D; loginPhone=MDgwMjIyNDgwMDY%3D; loginState=Qm9ybm8%3D; loginName=VW1hcg%3D%3D; loginId=OQ%3D%3D
+    [Content-Type] => application/json
+    [User-Agent] => insomnia/10.1.1
+    [Token] => 20241115
+    [Accept] => */*
+    [Content-Length] => 55
+)
+
+Body: {
+ "phone": "08022248006",
+	"accesspass": "abiso1122"
+}
+--------------------------------------------------------------------------------
+Request Method: POST
+Headers: Array
+(
+    [Host] => localhost
+    [Connection] => Upgrade, HTTP2-Settings
+    [Upgrade] => h2c
+    [HTTP2-Settings] => AAMAAABkAAQCAAAAAAIAAAAA
+    [Cookie] => loginAccount=Mw%3D%3D; loginPhone=MDgwMjIyNDgwMDY%3D; loginState=Qm9ybm8%3D; loginName=VW1hcg%3D%3D; loginId=OQ%3D%3D
+    [Content-Type] => application/json
+    [User-Agent] => insomnia/10.1.1
+    [Token] => 20241115
+    [Accept] => */*
+    [Content-Length] => 55
+)
+Request Method: POST
+Headers: Array
+(
+    [Host] => localhost
+    [Connection] => Upgrade, HTTP2-Settings
+    [Upgrade] => h2c
+    [HTTP2-Settings] => AAMAAABkAAQCAAAAAAIAAAAA
+    [Cookie] => loginAccount=Mw%3D%3D; loginPhone=MDgwMjIyNDgwMDY%3D; loginState=Qm9ybm8%3D; loginName=VW1hcg%3D%3D; loginId=OQ%3D%3D
+    [Content-Type] => application/json
+    [User-Agent] => insomnia/10.1.1
+    [Token] => 20241115
+    [Accept] => */*
+    [Content-Length] => 55
+)
+
+Body: {
+ "phone": "08022248006",
+	"accesspass": "abiso1122"
+}
+--------------------------------------------------------------------------------
+Request Method: POST
+Headers: Array
+(
+    [Host] => localhost
+    [Connection] => Upgrade, HTTP2-Settings
+    [Upgrade] => h2c
+    [HTTP2-Settings] => AAMAAABkAAQCAAAAAAIAAAAA
+    [Cookie] => loginAccount=Mw%3D%3D; loginPhone=MDgwMjIyNDgwMDY%3D; loginState=Qm9ybm8%3D; loginName=VW1hcg%3D%3D; loginId=OQ%3D%3D
+    [Content-Type] => application/json
+    [User-Agent] => insomnia/10.1.1
+    [Token] => 20241115
+    [Accept] => */*
+    [Content-Length] => 55
+)
+Request Method: POST
+Headers: Array
+(
+    [Host] => localhost
+    [Connection] => Upgrade, HTTP2-Settings
+    [Upgrade] => h2c
+    [HTTP2-Settings] => AAMAAABkAAQCAAAAAAIAAAAA
+    [Cookie] => loginAccount=Mw%3D%3D; loginPhone=MDgwMjIyNDgwMDY%3D; loginState=Qm9ybm8%3D; loginName=VW1hcg%3D%3D; loginId=OQ%3D%3D
+    [Content-Type] => application/json
+    [User-Agent] => insomnia/10.1.1
+    [Token] => 20241115
+    [Accept] => */*
+    [Content-Length] => 55
+)
+
+Body: {
+ "phone": "08022248006",
+	"accesspass": "abiso1122"
+}
+--------------------------------------------------------------------------------
+Request Method: POST
+Headers: Array
+(
+    [accept] => application/json, text/plain, */*
+    [token] => 20241115
+    [Content-Type] => application/json
+    [Content-Length] => 48
+    [Host] => 192.168.43.21
+    [Connection] => Keep-Alive
+    [Accept-Encoding] => gzip
+    [User-Agent] => okhttp/4.9.2
+)
+Request Method: POST
+Headers: Array
+(
+    [accept] => application/json, text/plain, */*
+    [token] => 20241115
+    [Content-Type] => application/json
+    [Content-Length] => 48
+    [Host] => 192.168.43.21
+    [Connection] => Keep-Alive
+    [Accept-Encoding] => gzip
+    [User-Agent] => okhttp/4.9.2
+)
+
+Body: {"phone":"08031230235","accesspass":"abiso1122"}
+--------------------------------------------------------------------------------
+Request Method: POST
+Headers: Array
+(
+    [accept] => application/json, text/plain, */*
+    [token] => 20241115
+    [Content-Type] => application/json
+    [Content-Length] => 48
+    [Host] => 192.168.43.21
+    [Connection] => Keep-Alive
+    [Accept-Encoding] => gzip
+    [User-Agent] => okhttp/4.9.2
+)
+Request Method: POST
+Headers: Array
+(
+    [accept] => application/json, text/plain, */*
+    [token] => 20241115
+    [Content-Type] => application/json
+    [Content-Length] => 48
+    [Host] => 192.168.43.21
+    [Connection] => Keep-Alive
+    [Accept-Encoding] => gzip
+    [User-Agent] => okhttp/4.9.2
+)
+
+Body: {"phone":"08031230235","accesspass":"abiso1122"}
+--------------------------------------------------------------------------------
+Request Method: POST
+Headers: Array
+(
+    [accept] => application/json, text/plain, */*
+    [token] => 20241115
+    [Content-Type] => application/json
+    [Content-Length] => 48
+    [Host] => 192.168.43.21
+    [Connection] => Keep-Alive
+    [Accept-Encoding] => gzip
+    [User-Agent] => okhttp/4.9.2
+)
+Request Method: POST
+Headers: Array
+(
+    [accept] => application/json, text/plain, */*
+    [token] => 20241115
+    [Content-Type] => application/json
+    [Content-Length] => 48
+    [Host] => 192.168.43.21
+    [Connection] => Keep-Alive
+    [Accept-Encoding] => gzip
+    [User-Agent] => okhttp/4.9.2
+)
+
+Body: {"phone":"08031230235","accesspass":"abiso1122"}
+--------------------------------------------------------------------------------
+Request Method: POST
+Headers: Array
+(
+    [accept] => application/json, text/plain, */*
+    [token] => 20241115
+    [Content-Type] => application/json
+    [Content-Length] => 48
+    [Host] => 192.168.43.21
+    [Connection] => Keep-Alive
+    [Accept-Encoding] => gzip
+    [User-Agent] => okhttp/4.9.2
+)
+Request Method: POST
+Headers: Array
+(
+    [accept] => application/json, text/plain, */*
+    [token] => 20241115
+    [Content-Type] => application/json
+    [Content-Length] => 48
+    [Host] => 192.168.43.21
+    [Connection] => Keep-Alive
+    [Accept-Encoding] => gzip
+    [User-Agent] => okhttp/4.9.2
+)
+
+Body: {"phone":"08031230235","accesspass":"abiso1122"}
+--------------------------------------------------------------------------------
+Request Method: POST
+Headers: Array
+(
+    [accept] => application/json, text/plain, */*
+    [token] => 20241115
+    [Content-Type] => application/json
+    [Content-Length] => 48
+    [Host] => 192.168.43.21
+    [Connection] => Keep-Alive
+    [Accept-Encoding] => gzip
+    [User-Agent] => okhttp/4.9.2
+)
+Request Method: POST
+Headers: Array
+(
+    [accept] => application/json, text/plain, */*
+    [token] => 20241115
+    [Content-Type] => application/json
+    [Content-Length] => 48
+    [Host] => 192.168.43.21
+    [Connection] => Keep-Alive
+    [Accept-Encoding] => gzip
+    [User-Agent] => okhttp/4.9.2
+)
+
+Body: {"phone":"08031230235","accesspass":"abiso1122"}
+--------------------------------------------------------------------------------
+Request Method: POST
+Headers: Array
+(
+    [accept] => application/json, text/plain, */*
+    [token] => 20241115
+    [Content-Type] => application/json
+    [Content-Length] => 49
+    [Host] => 192.168.43.21
+    [Connection] => Keep-Alive
+    [Accept-Encoding] => gzip
+    [User-Agent] => okhttp/4.9.2
+)
+Request Method: POST
+Headers: Array
+(
+    [accept] => application/json, text/plain, */*
+    [token] => 20241115
+    [Content-Type] => application/json
+    [Content-Length] => 49
+    [Host] => 192.168.43.21
+    [Connection] => Keep-Alive
+    [Accept-Encoding] => gzip
+    [User-Agent] => okhttp/4.9.2
+)
+
+Body: {"phone":"08031230235","accesspass":"Abisso1122"}
+--------------------------------------------------------------------------------
+Request Method: POST
+Headers: Array
+(
+    [accept] => application/json, text/plain, */*
+    [token] => 20241115
+    [Content-Type] => application/json
+    [Content-Length] => 49
+    [Host] => 192.168.43.21
+    [Connection] => Keep-Alive
+    [Accept-Encoding] => gzip
+    [User-Agent] => okhttp/4.9.2
+)
+Request Method: POST
+Headers: Array
+(
+    [accept] => application/json, text/plain, */*
+    [token] => 20241115
+    [Content-Type] => application/json
+    [Content-Length] => 49
+    [Host] => 192.168.43.21
+    [Connection] => Keep-Alive
+    [Accept-Encoding] => gzip
+    [User-Agent] => okhttp/4.9.2
+)
+
+Body: {"phone":"08022248006","accesspass":"Abisso1122"}
+--------------------------------------------------------------------------------
+Request Method: POST
+Headers: Array
+(
+    [accept] => application/json, text/plain, */*
+    [token] => 20241115
+    [Content-Type] => application/json
+    [Content-Length] => 48
+    [Host] => 192.168.43.21
+    [Connection] => Keep-Alive
+    [Accept-Encoding] => gzip
+    [User-Agent] => okhttp/4.9.2
+)
+Request Method: POST
+Headers: Array
+(
+    [accept] => application/json, text/plain, */*
+    [token] => 20241115
+    [Content-Type] => application/json
+    [Content-Length] => 48
+    [Host] => 192.168.43.21
+    [Connection] => Keep-Alive
+    [Accept-Encoding] => gzip
+    [User-Agent] => okhttp/4.9.2
+)
+
+Body: {"phone":"08022248006","accesspass":"abiso1122"}
+--------------------------------------------------------------------------------
+Request Method: GET
+Headers: Array
+(
+    [Host] => localhost
+    [Connection] => Upgrade, HTTP2-Settings
+    [Upgrade] => h2c
+    [HTTP2-Settings] => AAMAAABkAAQCAAAAAAIAAAAA
+    [Cookie] => loginAccount=Mw%3D%3D; loginPhone=MDgwMjIyNDgwMDY%3D; loginState=Qm9ybm8%3D; loginName=VW1hcg%3D%3D; loginId=OQ%3D%3D
+    [Content-Type] => application/json
+    [User-Agent] => insomnia/10.1.1
+    [Token] => 20241115
+    [Accept] => */*
+)
+Request Method: GET
+Headers: Array
+(
+    [Host] => localhost
+    [Connection] => Upgrade, HTTP2-Settings
+    [Upgrade] => h2c
+    [HTTP2-Settings] => AAMAAABkAAQCAAAAAAIAAAAA
+    [Cookie] => loginAccount=Mw%3D%3D; loginPhone=MDgwMjIyNDgwMDY%3D; loginState=Qm9ybm8%3D; loginName=VW1hcg%3D%3D; loginId=OQ%3D%3D
+    [Content-Type] => application/json
+    [User-Agent] => insomnia/10.1.1
+    [Token] => 20241115
+    [Accept] => */*
+    [Content-Length] => 56
+)
+Request Method: GET
+Headers: Array
+(
+    [Host] => localhost
+    [Connection] => Upgrade, HTTP2-Settings
+    [Upgrade] => h2c
+    [HTTP2-Settings] => AAMAAABkAAQCAAAAAAIAAAAA
+    [Cookie] => loginAccount=Mw%3D%3D; loginPhone=MDgwMjIyNDgwMDY%3D; loginState=Qm9ybm8%3D; loginName=VW1hcg%3D%3D; loginId=OQ%3D%3D
+    [Content-Type] => application/json
+    [User-Agent] => insomnia/10.1.1
+    [Token] => 20241115
+    [Accept] => */*
+    [Content-Length] => 56
+)
+Request Method: GET
+Headers: Array
+(
+    [Host] => localhost
+    [Connection] => Upgrade, HTTP2-Settings
+    [Upgrade] => h2c
+    [HTTP2-Settings] => AAMAAABkAAQCAAAAAAIAAAAA
+    [Cookie] => loginAccount=Mw%3D%3D; loginPhone=MDgwMjIyNDgwMDY%3D; loginState=Qm9ybm8%3D; loginName=VW1hcg%3D%3D; loginId=OQ%3D%3D
+    [Content-Type] => application/json
+    [User-Agent] => insomnia/10.1.1
+    [Token] => 20241115
+    [Accept] => */*
+    [Content-Length] => 56
+)
+Request Method: GET
+Headers: Array
+(
+    [Host] => localhost
+    [Connection] => Upgrade, HTTP2-Settings
+    [Upgrade] => h2c
+    [HTTP2-Settings] => AAMAAABkAAQCAAAAAAIAAAAA
+    [Cookie] => loginAccount=Mw%3D%3D; loginPhone=MDgwMjIyNDgwMDY%3D; loginState=Qm9ybm8%3D; loginName=VW1hcg%3D%3D; loginId=OQ%3D%3D
+    [Content-Type] => application/json
+    [User-Agent] => insomnia/10.1.1
+    [Token] => 20241115
+    [Accept] => */*
+    [Content-Length] => 56
+)
+Request Method: GET
+Headers: Array
+(
+    [Host] => localhost
+    [Connection] => Upgrade, HTTP2-Settings
+    [Upgrade] => h2c
+    [HTTP2-Settings] => AAMAAABkAAQCAAAAAAIAAAAA
+    [Cookie] => loginAccount=Mw%3D%3D; loginPhone=MDgwMjIyNDgwMDY%3D; loginState=Qm9ybm8%3D; loginName=VW1hcg%3D%3D; loginId=OQ%3D%3D
+    [Content-Type] => application/json
+    [User-Agent] => insomnia/10.1.1
+    [Token] => 20241115
+    [Accept] => */*
+    [Content-Length] => 56
+)
+Request Method: GET
+Headers: Array
+(
+    [Host] => localhost
+    [Connection] => Upgrade, HTTP2-Settings
+    [Upgrade] => h2c
+    [HTTP2-Settings] => AAMAAABkAAQCAAAAAAIAAAAA
+    [Cookie] => loginAccount=Mw%3D%3D; loginPhone=MDgwMjIyNDgwMDY%3D; loginState=Qm9ybm8%3D; loginName=VW1hcg%3D%3D; loginId=OQ%3D%3D
+    [Content-Type] => application/json
+    [User-Agent] => insomnia/10.1.1
+    [Token] => 20241115
+    [Accept] => */*
+)
+Request Method: GET
+Headers: Array
+(
+    [Host] => localhost
+    [Connection] => Upgrade, HTTP2-Settings
+    [Upgrade] => h2c
+    [HTTP2-Settings] => AAMAAABkAAQCAAAAAAIAAAAA
+    [Cookie] => loginAccount=Mw%3D%3D; loginPhone=MDgwMjIyNDgwMDY%3D; loginState=Qm9ybm8%3D; loginName=VW1hcg%3D%3D; loginId=OQ%3D%3D
+    [Content-Type] => application/json
+    [User-Agent] => insomnia/10.1.1
+    [Token] => 20241115
+    [Accept] => */*
+)
+Request Method: POST
+Headers: Array
+(
+    [Host] => localhost
+    [Connection] => Upgrade, HTTP2-Settings
+    [Upgrade] => h2c
+    [HTTP2-Settings] => AAMAAABkAAQCAAAAAAIAAAAA
+    [Cookie] => loginAccount=Mw%3D%3D; loginPhone=MDgwMjIyNDgwMDY%3D; loginState=Qm9ybm8%3D; loginName=VW1hcg%3D%3D; loginId=OQ%3D%3D
+    [Content-Type] => application/json
+    [User-Agent] => insomnia/10.1.1
+    [Token] => 20241115
+    [Accept] => */*
+    [Content-Length] => 56
+)
+Request Method: POST
+Headers: Array
+(
+    [Host] => localhost
+    [Connection] => Upgrade, HTTP2-Settings
+    [Upgrade] => h2c
+    [HTTP2-Settings] => AAMAAABkAAQCAAAAAAIAAAAA
+    [Cookie] => loginAccount=Mw%3D%3D; loginPhone=MDgwMjIyNDgwMDY%3D; loginState=Qm9ybm8%3D; loginName=VW1hcg%3D%3D; loginId=OQ%3D%3D
+    [Content-Type] => application/json
+    [User-Agent] => insomnia/10.1.1
+    [Token] => 20241115
+    [Accept] => */*
+    [Content-Length] => 56
+)
+
+Body: {
+ "phone": "08022248006",
+	"accesspass": "abiso1122"
+}
+
+--------------------------------------------------------------------------------
